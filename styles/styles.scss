@@ -1,0 +1,30 @@
+body {
+    margin:0;
+    padding:0;
+     box-sizing: border-box !important;
+    font-family: 'Montserrat', sans-serif;
+}
+.img1 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+// .secondary {
+//     color : #b9b9b9
+// }
+.br {
+    border-radius: 6px;
+}
+.divider {
+    background : #353535
+}
+.swiper-slide , .swiper-slide-active {
+    width : 200px !important
+}
+.filter {
+    filter: invert(1);
+}
+.icon {
+    width:130px !important;
+    height:130px !important
+}
