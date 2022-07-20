@@ -2,8 +2,7 @@ import {Box, Button, Container, Grid, Typography} from '@mui/material';
 
 export const btnStyles = {
     padding: '.77em 1.5em',
-    borderRadius: '3px',
-    
+    borderRadius: '3px'
 }
 const Hero = () => {
     return (
@@ -13,8 +12,7 @@ const Hero = () => {
             margin: '0 auto',
             py: {
                 xs: '7.5em',
-                sm: '8.5em',
-               
+                sm: '8.5em'
             }
         }}>
             <Grid
@@ -25,7 +23,7 @@ const Hero = () => {
 
                 <Grid item xs={12} sm={10} md={8} lg={7}>
                     <Typography
-                    variant='h1'
+                        variant='h1'
                         sx={{
                         fontSize: {
                             xs: '2.4em',
@@ -38,8 +36,7 @@ const Hero = () => {
                         Better, Faster and Cheaper Websites.
                     </Typography>
                     <Typography
-                    variant='h2'
-
+                        variant='h2'
                         className='secondary'
                         sx={{
                         pt: '1.5em',
@@ -58,7 +55,7 @@ const Hero = () => {
                         my: '2.5em',
                         gap: '.8em',
                         display: 'flex',
-                        flexWrap: 'wrap',
+                        flexWrap: 'wrap'
                     }}>
                         {/* <Button
                             className="offset"
@@ -77,13 +74,17 @@ const Hero = () => {
 
                             </Typography>
                         </Button> */}
-           <Button sx={{':hover' : {background:'#0384e4'}}} className="button explore">
-            Explore
-           <span className="icon-right"></span>
-           <span className="icon-right after">
-
-           </span>
-           </Button>
+                        <Button
+                            sx={{
+                            ':hover': {
+                                background: '#0384e4'
+                            }
+                        }}
+                            className="button explore">
+                            Explore
+                            <span className="icon-right"></span>
+                            <span className="icon-right after"></span>
+                        </Button>
                         <Button sx={btnStyles} variant='outlined'>
                             <Typography fontSize='14px'>
                                 DOWNLOAD CV
@@ -93,9 +94,6 @@ const Hero = () => {
                 </Grid>
                 <Grid
                     sx={{
-                     
-                      
-                    
                     mb: {
                         xs: '3.5em',
                         sm: '4em',

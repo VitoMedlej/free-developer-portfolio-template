@@ -30,10 +30,10 @@ const FrontendTools = [
         title: 'Javascript',
         svg: 'https://www.svgrepo.com/show/355081/js.svg'
     }, {
-        title: 'Tailwindcss',
-        svg: 'https://www.svgrepo.com/show/374118/tailwind.svg'
+        title: 'Scss',
+        svg: 'https://www.svgrepo.com/show/374068/scss.svg'
     }
-]
+];
 const OtherTools = [
     {
         title: 'Nodejs',
@@ -167,7 +167,7 @@ const TechTools = () => {
             </Grid>
 
         </Container>
-        <Divider className='divider'/>
+        <Divider />
         </>
     )
 }

@@ -12,9 +12,9 @@ const CustomDrawer = ({isOpen, toggleDrawer} : ICustomDrawer) => {
         anchor={'right'} open={isOpen} onClose={() => toggleDrawer(false)}>
             <Container
                 sx={{
-        zIndex:'555555',
+                 zIndex:'555555',
                     color: 'white',
-                background: '#1f1f1f',
+                // background: '#1f1f1f',
                 display: 'flex',
                 width: '290px',
                 justifyContent: 'space-between',
@@ -35,12 +35,13 @@ const CustomDrawer = ({isOpen, toggleDrawer} : ICustomDrawer) => {
                     <CloseIcon/>
                 </IconButton>
             </Container>
+            <Divider/>
 
             <Container
                 sx={{
                 pt: '1.5em',
-                background: '#232323',
-                color: 'white',
+                // background: '#232323',
+                // color: 'white',
                 height: '100%'
             }}>
                 fasfasf asfasfasf

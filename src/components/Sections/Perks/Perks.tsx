@@ -18,7 +18,7 @@ const Perks = () => {
     }}>
         <Box sx={centeredStyles}>
             <Typography
-            variant='h1'
+                variant='h1'
                 sx={{
                 fontSize: {
                     xs: '2.2em',
@@ -30,8 +30,7 @@ const Perks = () => {
                 Build up the whole picture
             </Typography>
             <Typography
-            variant='h2'
-
+                variant='h2'
                 className='secondary'
                 sx={{
                 pt: '1.5em',
@@ -62,7 +61,7 @@ const Perks = () => {
                 })}
             </Box>
         </Box>
-    </Container> < Divider className = 'divider' /> </>)
+    </Container> < Divider /> </>)
 }
 
 export default Perks

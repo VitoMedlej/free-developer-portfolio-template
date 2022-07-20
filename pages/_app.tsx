@@ -6,56 +6,54 @@ import '../styles/buttonStyles.css'
 import {ThemeProvider} from '@emotion/react'
 import {createTheme, PaletteMode} from "@mui/material"
 import {createContext, useMemo, useState} from 'react'
-import {amber, grey, deepOrange} from '@mui/material/colors'
 
-
-export const ColorModeContext  = createContext({
-    mode : 'dark',
+export const ColorModeContext = createContext({
+    mode: 'dark',
     toggleColorMode: () => {}
 });
 
 function MyApp({Component, pageProps} : AppProps) {
     const [mode,
-        setMode] = useState < 'light' | 'dark' > ('dark');
-    // const THEME : any = useMemo(()=>{     createTheme({         typography: {
-    //         "fontFamily": `'Montserrat', sans-serif`,             "fontSize": 16,
-    //             allVariants: {                 color: '#ff0000'               },
-    //              h1 : {                 color: "#2882F8",               }
-    // },         palette: {             primary: {   main: '#0092ff' }},     });
-    // },[])
+        setMode] = useState < 'light' | 'dark' > ('light');
+
     const getDesignTokens = (mode : PaletteMode) => ({
         typography: {
             "fontFamily": `'Montserrat', sans-serif`,
             "fontSize": 16,
             h1: {
-                color: mode === 'light'? '#000000':  '#ffffff'
+                color: mode === 'light'
+                    ? '#000000'
+                    : '#ffffff'
             },
             h2: {
-                color: mode === 'light'? '#292929':  '#b9b9b9'
+                color: mode === 'light'
+                    ? '#292929'
+                    : '#b9b9b9'
             },
-            h3 : {
-                color : mode === 'light'? '#737373' : '#a7a7a7',
+            h3: {
+                color: mode === 'light'
+                    ? '#737373'
+                    : '#a7a7a7',
                 lineHeight: '1.3em'
 
             }
         },
-        button : {
-            'borderRadius' : '5000px'
+        button: {
+            'borderRadius': '5000px'
         },
         palette: {
-            
+
             mode,
             ...(mode === 'light'
                 ? {
-                 
+
                     // palette values for light mode
                     primary: {
                         main: '#0092ff'
                     },
                     divider: '#d6d6d6',
                     text: {
-                        primary: '#000000',
-                        secondary: grey[800]
+                        primary: '#000000'
                     },
                     background: {
                         default: '#ffffff'
@@ -72,8 +70,7 @@ function MyApp({Component, pageProps} : AppProps) {
                         main: '#0092ff'
                     },
                     text: {
-                        primary: '#000000',
-                        secondary: grey[500]
+                        primary: '#000000'
                     }
                 })
         }

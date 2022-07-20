@@ -1,7 +1,7 @@
-import {Box, Typography, Button} from '@mui/material';
+import {Box, Typography, Button, Divider} from '@mui/material';
 import Image from 'next/image'
 import {btnStyles} from '../Hero/Hero';
-const ProjectCard = ({isReversed} : any) => {
+const ProjectCard = ({isReversed,img,repoUrl,siteUrl,title,description} : any) => {
     return (
         <Box
             sx={{
@@ -11,23 +11,24 @@ const ProjectCard = ({isReversed} : any) => {
                 xs: 'column',
                 md: `${isReversed ? 'row':'row-reverse'}`
             },
-            alignItems: 'center'
+            alignItems: 'center',
         }}>
             <Box
                 sx={{
-                width: {xs:'100%',sm:'600px'},
-                minWidth:{xs:'auto',sm:'250px',md:'390px'},
-                height: '400px',
-                position: 'relative'
-            }}>
+                    width: {xs:'100%',sm:'600px'},
+                    minWidth:{xs:'auto',sm:'250px',md:'390px'},
+                    height: '400px',
+                    position: 'relative'
+                }}>
 
                 <Image
                     className='img1 '
                     layout='fill'
-                    src='https://res.cloudinary.com/dwcu3wcol/image/upload/v1658225289/photo-1588702547923-7093a6c3ba33_gay7kt.jpg'/>
+                    src={`${img}`}/>
             </Box>
             <Box
                 sx={{
+                    // boxShadow:'1.5em 1em 1px #0092ff',
                 borderRadius: '6px',
                 width: {
                     xs: '94%',
@@ -47,6 +48,7 @@ const ProjectCard = ({isReversed} : any) => {
                 flexDirection: 'row-reverse',
                 alignItems: 'center'
             }}>
+           
                 <Box >
 
                     <Typography
@@ -56,7 +58,7 @@ const ProjectCard = ({isReversed} : any) => {
                         fontWeight: '500',
                         pb: '.25em'
                     }}>
-                        Hello world lorem
+                       {title}
                     </Typography>
                     <Typography
                         color='black'
@@ -78,36 +80,41 @@ const ProjectCard = ({isReversed} : any) => {
                         flexWrap: 'wrap',
                         mt:'1em',
                     }}>
+                        <a href={`${siteUrl}`} target="_blank">
+
                         <Button
                             variant='contained'
                             sx={{
-                            ...btnStyles,
-                            padding: '.5em .8em',
-                            color: 'white',
-                            border: '1px solid #0092ff'
-                        }}>
+                                ...btnStyles,
+                                padding: '.5em .8em',
+                                color: 'white',
+                                border: '1px solid #0092ff'
+                            }}>
                             <Typography fontSize='12px'>
-                                DOWNLOAD CV
+                                Live Site
                             </Typography>
                         </Button>
+                            </a>
+                        <a href={`${repoUrl}`} target="_blank">
+
                         <Button
                             variant='text'
                             sx={{
-                            ...btnStyles,
-                            padding: '.5em .8em',
-                            color: '#0092ff',
-                            
-                        }}>
+                                ...btnStyles,
+                                padding: '.5em .8em',
+                                color: '#0092ff',
+                                
+                            }}>
                             <Typography fontSize='12px'>
-                                DOWNLOAD CV
+                               Check Code
                             </Typography>
                         </Button>
+                            </a>
 
                     </Box>
                 </Box>
 
             </Box>
-
         </Box>
     )
 }
