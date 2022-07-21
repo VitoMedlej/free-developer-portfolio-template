@@ -96,7 +96,7 @@
 }
 
 .icon-right.after:before {
-  content: 'Explore';
+  content: 'Navigate';
   position: absolute;
   left: -230px;
   top: 14px;

@@ -1,16 +1,20 @@
-import {Container, Box, Grid} from '@mui/material'
+import { Container, Box, Grid, Divider } from '@mui/material';
 import Image from 'next/image'
 import Typography from '@mui/material/Typography';
 import ReadMore from '../ReadMore/ReadMore';
+import { ColorModeContext } from '../../../../pages/_app';
+import { useContext } from 'react';
 
 const About = () => {
+    const colorMode = useContext(ColorModeContext)
     return (
+    <>
         <Container
             maxWidth='lg'
             sx={{
             margin: '0 auto',
-            pt: '6em',
-            pb: '3em'
+            py: '6em',
+          
         }}>
             <Grid
                 container
@@ -42,14 +46,15 @@ const About = () => {
                             position: 'absolute',
                             right: {
                                 xs: '-4%',
-                                sm: '-5%'
+                                sm: '90%'
                             },
+                            
                             bottom: {
                                 xs: '-5%',
                                 sm: '-10%'
                             },
                             background: 'transparent',
-                            backgroundImage: 'radial-gradient(white 2px, transparent 0)',
+                            backgroundImage:colorMode.mode === 'dark' ? 'radial-gradient(white 2px, transparent 0)' : 'radial-gradient(black 2px, transparent 0)',
                             backgroundSize: '15px 13px'
                         }}></Box>
                         <Image
@@ -77,7 +82,7 @@ const About = () => {
                             }
                         }}
                             fontWeight='600'>
-                            Hello nigger
+                            Hello My non boring friend
                         </Typography>
                         <Typography
                             variant='h2'
@@ -108,6 +113,9 @@ const About = () => {
             </Grid>
 
         </Container>
+    <Divider/>
+        </>
+    
     )
 }
 

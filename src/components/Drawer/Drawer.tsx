@@ -3,18 +3,17 @@ import {useState} from 'react'
 import {ICustomDrawer} from '../../Types/Types'
 import CustomLink from '../Mui/CustomLink'
 import CloseIcon from '@mui/icons-material/Close';
+import {Links} from '../Navbar/Navbar';
+import DrawerItem from './DrawerItem';
 
 const CustomDrawer = ({isOpen, toggleDrawer} : ICustomDrawer) => {
 
     return (
 
-        <Drawer 
-        anchor={'right'} open={isOpen} onClose={() => toggleDrawer(false)}>
+        <Drawer anchor={'right'} open={isOpen} onClose={() => toggleDrawer(false)}>
             <Container
                 sx={{
-                 zIndex:'555555',
-                    color: 'white',
-                // background: '#1f1f1f',
+                zIndex: '555555',
                 display: 'flex',
                 width: '290px',
                 justifyContent: 'space-between',
@@ -22,13 +21,17 @@ const CustomDrawer = ({isOpen, toggleDrawer} : ICustomDrawer) => {
                 margin: '0 auto'
             }}>
 
-                <CustomLink handleClick={()=>toggleDrawer(false)}color='#0092ff' fontWeight='600' text='LOGO' href='/'/>
+                <CustomLink
+                    handleClick={() => toggleDrawer(false)}
+                    fontWeight='600'
+                    text='LOGO'
+                    href='/'
+                    color='#0092ff'/>
                 <IconButton
                     onClick={() => toggleDrawer(false)}
                     size="large"
                     sx={{
-                    color: 'red',
-                    padding : '.5em 0'
+                    padding: '.5em 0'
                 }}
                     edge="start"
                     aria-label="menu">
@@ -37,15 +40,15 @@ const CustomDrawer = ({isOpen, toggleDrawer} : ICustomDrawer) => {
             </Container>
             <Divider/>
 
-            <Container
+            <Box
                 sx={{
-                pt: '1.5em',
-                // background: '#232323',
-                // color: 'white',
+                pt: '1em',
                 height: '100%'
             }}>
-                fasfasf asfasfasf
-            </Container>
+                {Links.map(link => {
+                    return <DrawerItem Icon={link.Icon} text={link.text}/>
+                })}
+            </Box>
         </Drawer>
 
     )

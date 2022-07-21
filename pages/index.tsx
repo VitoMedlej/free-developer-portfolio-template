@@ -6,6 +6,7 @@ import Hero from '../src/components/Sections/Hero/Hero'
 import Perks from '../src/components/Sections/Perks/Perks'
 import Projects from '../src/components/Sections/Projects/Projects';
 import About from '../src/components/Sections/About/About'
+import CTA from '../src/components/Sections/CallToAction/CTA'
 
 const Home : NextPage = () => {
     return (
@@ -20,6 +21,7 @@ const Home : NextPage = () => {
            <Experience/>
            <Projects/>
            <About/>
+           <CTA />
         </Box>
     )
 }

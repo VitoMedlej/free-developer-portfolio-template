@@ -10,8 +10,11 @@ import Link from 'next/link';
 import CustomLink from '../Mui/CustomLink';
 import {INavbar} from '../../Types/Types';
 import {ColorModeContext} from '../../../pages/_app';
-const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+import InboxIcon from '@mui/icons-material/Inbox';
+
+
+
+export const Links = [{text:'Home',Icon:InboxIcon}, {text:'Contact',Icon:InboxIcon}]
 
 const Navbar = ({toggleDrawer} : INavbar) => {
     const colorMode = useContext(ColorModeContext)

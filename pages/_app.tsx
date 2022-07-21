@@ -15,20 +15,22 @@ export const ColorModeContext = createContext({
 function MyApp({Component, pageProps} : AppProps) {
     const [mode,
         setMode] = useState < 'light' | 'dark' > ('light');
-
+    const color = mode === 'light'
+        ? '#000000'
+        : '#ffffff'
     const getDesignTokens = (mode : PaletteMode) => ({
         typography: {
             "fontFamily": `'Montserrat', sans-serif`,
             "fontSize": 16,
             h1: {
-                color: mode === 'light'
-                    ? '#000000'
-                    : '#ffffff'
+                color
             },
             h2: {
                 color: mode === 'light'
                     ? '#292929'
-                    : '#b9b9b9'
+                    : '#b9b9b9',
+                lineHeight: '1.3em'
+
             },
             h3: {
                 color: mode === 'light'
@@ -41,23 +43,46 @@ function MyApp({Component, pageProps} : AppProps) {
         button: {
             'borderRadius': '5000px'
         },
+        Drawer: {
+            background: '#ffffff'
+        },
+        components: {
+            MuiDrawer: {
+                styleOverrides: {
+                    paper: {
+                        backgroundColor: mode === 'light'
+                            ? "#ffffff"
+                            : '#232323',
+                        color
+                    }
+                }
+            }
+        },
         palette: {
 
             mode,
+            primary: {
+                main: '#0092ff'
+            },
             ...(mode === 'light'
                 ? {
 
                     // palette values for light mode
-                    primary: {
-                        main: '#0092ff'
-                    },
+
                     divider: '#d6d6d6',
-                    text: {
-                        primary: '#000000'
-                    },
+                    Drawer: '#ffffff',
+
                     background: {
                         default: '#ffffff'
 
+                    },
+                    MuiDrawer: {
+                        styleOverrides: {
+                            paper: {
+                                backgroundColor: "pink",
+                                color: "red"
+                            }
+                        }
                     }
                 }
                 : {
@@ -65,12 +90,6 @@ function MyApp({Component, pageProps} : AppProps) {
                     divider: '#353535',
                     background: {
                         default: '#232323'
-                    },
-                    primary: {
-                        main: '#0092ff'
-                    },
-                    text: {
-                        primary: '#000000'
                     }
                 })
         }
