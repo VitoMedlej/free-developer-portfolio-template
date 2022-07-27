@@ -16,7 +16,7 @@ const CustomDrawer = ({isOpen, toggleDrawer} : ICustomDrawer) => {
             <Box
 
                 sx={{
-            px:'1em',
+            px:'.5em',
                     zIndex: '555555',
                 display: 'flex',
                 width: '300px',
