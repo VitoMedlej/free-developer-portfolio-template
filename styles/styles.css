@@ -23,9 +23,20 @@ body {
 
 a {
   text-decoration: none;
+  color: #0000EE;
 }
 
-.swiper-slide, .swiper-slide-active {
+a :visited {
+  color: #551A8B;
+}
+
+.FooterLink {
+  color: #0000EE;
+  cursor: pointer;
+}
+
+.swiper-slide,
+.swiper-slide-active {
   width: 200px !important;
 }
 
@@ -37,5 +48,23 @@ a {
 .icon {
   width: 130px !important;
   height: 130px !important;
+}
+
+.ball {
+  width: 20px;
+  height: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border: 3px solid dodgerblue;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 24124124;
+}
+
+.t25o0 {
+  -webkit-transform: translateY(25px);
+          transform: translateY(25px);
+  opacity: 0;
 }
 /*# sourceMappingURL=styles.css.map */

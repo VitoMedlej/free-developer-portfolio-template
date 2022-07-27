@@ -46,7 +46,7 @@ const CustomDrawer = ({isOpen, toggleDrawer} : ICustomDrawer) => {
                 height: '100%'
             }}>
                 {Links.map(link => {
-                    return <DrawerItem Icon={link.Icon} text={link.text}/>
+                    return <DrawerItem toggleDrawer={toggleDrawer} key={link.text} url={link.url} Icon={link.Icon} text={link.text}/>
                 })}
             </Box>
         </Drawer>

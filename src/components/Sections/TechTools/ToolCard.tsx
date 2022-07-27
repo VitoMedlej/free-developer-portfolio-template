@@ -3,13 +3,29 @@ import Typography from '@mui/material/Typography';
 import Image from 'next/image'
 import {IToolCard} from '../../../Types/Types';
 import {centeredStyles} from '../Perks/Perks';
+import {useEffect} from 'react';
+import gsap from 'gsap'
+const ToolCard = ({title, svg, filter, className} : IToolCard) => {
 
-const ToolCard = ({title, svg, filter} : IToolCard) => {
+    useEffect(() => {
+
+        gsap.to(`.${className}`, {
+            opacity: 1,
+            stagger: .10,
+            scrollTrigger: {
+                trigger: `.${className}`,
+                start: 'top 70%'
+            }
+        })
+    }, [])
     return (
         <Box
+            className={className}
             sx={{
             my: '1em',
+            opacity: 0,
             maxWidth: '250px',
+            transition: '.2s ease',
             width: {
                 xs: '50%',
                 sm: '33%'
@@ -31,14 +47,13 @@ const ToolCard = ({title, svg, filter} : IToolCard) => {
                 <Image
                     className={`${filter
                     ? 'filter '
-                    : ''}  icon`}
+                    : ''} icon`}
                     width='100%'
                     height='100%'
                     src={`${svg}`}/>
             </Box>
             <Typography
-                    variant='h3'
-
+                variant='h3'
                 sx={{
                 fontSize: {
                     xs: '.86em',

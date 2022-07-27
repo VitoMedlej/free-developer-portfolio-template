@@ -1,12 +1,76 @@
 import {Box, Button, Container, Grid, Typography} from '@mui/material';
-
+import gsap from 'gsap';
+import {useRef, useEffect} from 'react';
+import  ScrollToPlugin  from "gsap/dist/ScrollToPlugin";
 export const btnStyles = {
     padding: '.77em 1.5em',
     borderRadius: '3px'
 }
+
 const Hero = () => {
+    const ref = useRef();
+    const q = gsap
+        .utils
+        .selector(ref);
+    gsap.registerPlugin(ScrollToPlugin);
+    useEffect(() => {
+        gsap.to(q(".t1"), {
+            delay: '.3',
+            opacity: "1",
+            y: 0,
+            duration: '.6',
+            ease: 'ease'
+        });
+        gsap.to(q(".t2"), {
+            delay: '.7',
+            opacity: "1",
+            y: 0,
+            duration: '.4',
+            ease: 'ease'
+        }); 
+           gsap.to(q(".b1"), {
+            delay: '1.15',
+            opacity: "1",
+            y:0,
+            duration: '.3',
+        });   gsap.to(q(".b2"), {
+            delay: '1.6',
+            opacity: "1",
+            duration: '.6',
+        });
+
+
+
+        gsap.to(".mainBox", {
+            delay: '1.5',
+            opacity: "1",
+            duration: '.7',
+        });
+
+        gsap.to(".quoteBox", {
+            delay: '1.9',
+            opacity: "1",
+            duration: '.7',
+            top : 'auto',
+        });
+        gsap.to(".gradientBg", {
+            delay: '2.3',
+            opacity: "1",
+            duration: '1',
+        });
+        gsap.to(".img1", {
+            delay: '1.6',
+            opacity:1,
+            duration: '1',
+        });
+
+        
+    
+    }, [])
+
     return (
         <Container
+        id='hero'
             maxWidth='lg'
             sx={{
             margin: '0 auto',
@@ -22,75 +86,79 @@ const Hero = () => {
             }}>
 
                 <Grid item xs={12} sm={10} md={8} lg={7}>
-                    <Typography
-                        variant='h1'
-                        sx={{
-                        fontSize: {
-                            xs: '2.4em',
-                            sm: '3.4em',
-                            md: '3.8em'
-                        },
-                        pt: '1em',
-                        fontWeight: '600'
-                    }}>
-                        Better, Faster and Cheaper Websites.
-                    </Typography>
-                    <Typography
-                        variant='h2'
-                        className='secondary'
-                        sx={{
-                        pt: '1.5em',
-                        fontSize: {
-                            xs: '.9em',
-                            sm: '1em'
-                        },
-                        maxWidth: '570px',
-                        fontWeight: '300'
-                    }}>
-                        Whether it's a mobile application or web application, we are a team of
-                        high-performing app developers Lebanese that turn your idea into reality.
-                    </Typography>
+                    <Box ref={ref}>
+
+                        <Typography
+                            className='t1'
+                            variant='h1'
+                            sx={{
+                            fontSize: {
+                                xs: '2.4em',
+                                sm: '3.4em',
+                                md: '3.8em'
+                            },
+                            transform: 'translateY(40px)',
+                            opacity: 0,
+                            pt: '1em',
+                            fontWeight: '600'
+                        }}>
+                            Better, Faster and Cheaper Websites.
+                        </Typography>
+                        <Typography
+                            variant='h2'
+                            className='secondary t2 t25o0'
+                            sx={{
+                          
+                            pt: '1.5em',
+                            fontSize: {
+                                xs: '.9em',
+                                sm: '1em'
+                            },
+                            maxWidth: '570px',
+                            fontWeight: '300'
+                        }}>
+                            Whether it's a mobile application or web application, we are a team of
+                            high-performing app developers Lebanese that turn your idea into reality.
+                        </Typography>
+           
+
                     <Box
+                   
                         sx={{
                         my: '2.5em',
                         gap: '.8em',
                         display: 'flex',
                         flexWrap: 'wrap'
                     }}>
-                        {/* <Button
-                            className="offset"
-                            sx={{
-                            ...btnStyles,
-                            background: 'transparent',
-                            border: '1.5px solid #0092ff',
-                            color: '#0092ff',
-                            ':hover': {
-                                color: 'white'
-                            }
-                        }}
-                            variant='contained'>
-                            <Typography fontSize='14px'>
-                                View Projects
 
-                            </Typography>
-                        </Button> */}
                         <Button
+                        onClick={()=>gsap.to(window, {duration: 2, scrollTo: `#ProjectSection`})}
                             sx={{
+                            transform: 'translateY(25px)',
+                           
                             ':hover': {
                                 background: '#0384e4'
                             }
                         }}
-                            className="button explore">
+                            className="button  b1 explore ">
                             Explore
                             <span className="icon-right"></span>
                             <span className="icon-right after"></span>
                         </Button>
-                        <Button sx={btnStyles} variant='outlined'>
+                        <Button
+                        className='b2'
+
+                            sx={{
+                            ...btnStyles,
+                        
+                            opacity: 0
+                        }}
+                            variant='outlined'>
                             <Typography fontSize='14px'>
                                 DOWNLOAD CV
                             </Typography>
                         </Button>
-                    </Box>
+                    </Box>         </Box>
                 </Grid>
                 <Grid
                     sx={{
@@ -123,8 +191,10 @@ const Hero = () => {
                         }
                     }}>
                         <Box
+                            className='mainBox'
                             sx={{
-                            display: 'flex',
+                                opacity:0,
+                                display: 'flex',
                             flexDirection: 'column',
                             position: 'relative',
                             height: '460px',
@@ -135,14 +205,17 @@ const Hero = () => {
                         }}>
 
                             <img
+
                                 style={{
-                                borderRadius: '6px',
+                            opacity:0,
+                                    borderRadius: '6px',
                                 zIndex: '2'
                             }}
                                 className='img1'
                                 src={`https://vitomedl.netlify.app/static/media/ane.3273a2f2.png`}
                                 alt=""/>
                             <Box
+                                className='gradientBg'
                                 sx={{
                                 width: '100px',
                                 height: '100px',
@@ -152,12 +225,14 @@ const Hero = () => {
                                     xs: '-1%',
                                     sm: '-5%'
                                 },
+                                opacity:0,
                                 bottom: '-5%',
                                 background: 'transparent',
                                 backgroundImage: 'radial-gradient(white 2px, transparent 0)',
                                 backgroundSize: '15px 13px'
                             }}></Box>
                             <Box
+                                className='quoteBox'
                                 sx={{
                                 zIndex: '2',
                                 position: 'absolute',
@@ -169,6 +244,9 @@ const Hero = () => {
                                 right: {
                                     sm: '25%'
                                 },
+                                top : '105%',
+                                overflow:'hidden',
+                                opacity:0,
                                 background: '#0092ff'
                             }}>
                                 <Typography

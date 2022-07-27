@@ -6,6 +6,7 @@ import '../styles/buttonStyles.css'
 import {ThemeProvider} from '@emotion/react'
 import {createTheme, PaletteMode} from "@mui/material"
 import {createContext, useMemo, useState} from 'react'
+import CssBaseline from '@mui/material/CssBaseline';
 
 export const ColorModeContext = createContext({
     mode: 'dark',
@@ -14,10 +15,10 @@ export const ColorModeContext = createContext({
 
 function MyApp({Component, pageProps} : AppProps) {
     const [mode,
-        setMode] = useState < 'light' | 'dark' > ('light');
+        setMode] = useState < 'light' | 'dark' > ('dark');
     const color = mode === 'light'
-        ? '#000000'
-        : '#ffffff'
+    ? '#000000'
+    : '#ffffff'
     const getDesignTokens = (mode : PaletteMode) => ({
         typography: {
             "fontFamily": `'Montserrat', sans-serif`,
@@ -43,29 +44,16 @@ function MyApp({Component, pageProps} : AppProps) {
         button: {
             'borderRadius': '5000px'
         },
-        Drawer: {
-            background: '#ffffff'
-        },
-        components: {
-            MuiDrawer: {
-                styleOverrides: {
-                    paper: {
-                        backgroundColor: mode === 'light'
-                            ? "#ffffff"
-                            : '#232323',
-                        color
-                    }
-                }
-            }
-        },
-        palette: {
 
+        palette: {
+      
             mode,
-            primary: {
-                main: '#0092ff'
-            },
+         
             ...(mode === 'light'
                 ? {
+                    primary: {
+                        main: '#0092ff'
+                    },
 
                     // palette values for light mode
 
@@ -74,22 +62,24 @@ function MyApp({Component, pageProps} : AppProps) {
 
                     background: {
                         default: '#ffffff'
-
                     },
-                    MuiDrawer: {
-                        styleOverrides: {
-                            paper: {
-                                backgroundColor: "pink",
-                                color: "red"
-                            }
-                        }
-                    }
+             
+                    text: {
+                        primary: '#000000'
+                    },
                 }
                 : {
+                     
                     // palette values for dark mode
-                    divider: '#353535',
+                  divider: '#353535',
                     background: {
                         default: '#232323'
+                    },
+                    primary: {
+                        main: '#0092ff'
+                    },
+                    text: {
+                        primary: '#000000'
                     }
                 })
         }
@@ -111,6 +101,7 @@ function MyApp({Component, pageProps} : AppProps) {
         <ThemeProvider theme={{
             ...Theme
         }}>
+             <CssBaseline />
 
             <Layout title=''>
 

@@ -1,60 +1,87 @@
 import {Box, Button, Container} from "@mui/material"
 import Typography from '@mui/material/Typography';
-import { useRouter } from "next/router";
-
+import {useRouter} from "next/router";
+import {useEffect, useRef} from "react";
+import gsap from 'gsap'
 const CTA = () => {
     const router = useRouter()
+ 
+    useEffect(() => {
+    
+
+        gsap.to(".CTAbox", {left: '0%',duration:.8,scrollTrigger:{trigger:'.CTAbox',start:'top 65%'}});
+        gsap.to(".CTAcontainer p", {delay:.8,opacity: 1,scrollTrigger:{trigger:'.CTAbox',start:'top 65%'}});
+        gsap.to(".CTAcontainer div button", {delay:.95,opacity: 1,scrollTrigger:{trigger:'.CTAbox',start:'top 65%'}});
+
+    }, [])
+
     return (
-        <Box sx={{
-            background: '#0092ff',
-            my: '6em'
+        <Box
+            sx={{
+            width: '100%',
+            height: '300px',
+            my: '6em',
+            position: 'relative'
         }}>
 
-            <Container
-                maxWidth='lg'
+            <Box
+                className='CTAbox'
                 sx={{
-                margin: '0 auto',
-                py: '3em'
+                width: "100%",
+                top: 0,
+                left: '-100%',
+                position: 'absolute',
+                background: '#0092ff'
             }}>
 
-                <Typography
-                   
+                <Container
+                    className='CTAcontainer '
+                    maxWidth='lg'
                     sx={{
-                    textAlign: 'center',
-                    fontSize: {
-                        xs: '1.5em',
-                        sm: '2em',
-                        md: '2.5em'
-                    }
-                }}
-                    fontWeight='600'>
-                    What's holding you back? Send me a message!
-                </Typography>
-                <Box
-                    sx={{
-                  
-                    margin: '1.5em 0  auto',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center'
+                    margin: '0 auto',
+                    py: '3em'
                 }}>
 
-                    <Button
-                    onClick={()=>router.push('/contact')}
+                    <Typography
+                    className='t25o0'
                         sx={{
-                        border: '1px solid',
-                        ':hover': {
-                            background: '#0384e4'
+                        textAlign: 'center',
+                        fontSize: {
+                            xs: '1.5em',
+                            sm: '2em',
+                            md: '2.5em'
                         }
                     }}
-                        className="button br2 explore">
-                        Contact Me
-                        <span className="icon-right"></span>
-                        <span className="icon-right after"></span>
-                    </Button>
-                </Box>
+                        fontWeight='600'>
+                        What's holding you back? Send me a message!
+                    </Typography>
+                    <Box
 
-            </Container>
+                        sx={{
+                        margin: '1.5em 0 auto',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                    }}>
+
+                        <Button
+                            onClick={() => router.push('/contact')}
+                            sx={{
+                            border: '1px solid',
+                            mt:'1.5em',
+                            ':hover': {
+                                background: '#0384e4'
+                            }
+                        }}
+                            className="button br2 explore">
+                            Contact Me
+                            <span className="icon-right"></span>
+                            <span className="icon-right after"></span>
+                        </Button>
+                    </Box>
+
+                </Container>
+            </Box>
         </Box>
 
     )

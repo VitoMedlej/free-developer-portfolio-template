@@ -1,5 +1,9 @@
 import {Box, Container, Typography, Divider} from '@mui/material';
 import PerkCard from './PerkCard';
+import {useEffect} from 'react';
+import gsap from 'gsap';
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import MainTitleAnimation from '../../../gsap/MainTitleAnimation';
 
 export const centeredStyles = {
     alignItems: 'center',
@@ -9,7 +13,14 @@ export const centeredStyles = {
     display: 'flex',
     flexDirection: 'column'
 }
+
+gsap.registerPlugin(ScrollTrigger);
 const Perks = () => {
+
+    useEffect(() => {
+        MainTitleAnimation('.h1','.h2')
+    }, [])
+
     return ( <> <Container
         maxWidth='lg'
         sx={{
@@ -18,8 +29,10 @@ const Perks = () => {
     }}>
         <Box sx={centeredStyles}>
             <Typography
+                className='h1 t25o0'
                 variant='h1'
                 sx={{
+             
                 fontSize: {
                     xs: '2.2em',
                     sm: '2.5em',
@@ -31,9 +44,11 @@ const Perks = () => {
             </Typography>
             <Typography
                 variant='h2'
-                className='secondary'
+                className='secondary h2'
                 sx={{
                 pt: '1.5em',
+                transform: 'translateY(15px)',
+                opacity: 0,
                 maxWidth: '570px',
                 fontSize: {
                     xs: '.8em',

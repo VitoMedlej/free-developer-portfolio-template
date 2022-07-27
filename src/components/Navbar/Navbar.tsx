@@ -14,7 +14,7 @@ import InboxIcon from '@mui/icons-material/Inbox';
 
 
 
-export const Links = [{text:'Home',Icon:InboxIcon}, {text:'Contact',Icon:InboxIcon}]
+export const Links = [{text:'Home',Icon:InboxIcon,url:'/'}, {text:'Contact',Icon:InboxIcon,url:'/contact'}]
 
 const Navbar = ({toggleDrawer} : INavbar) => {
     const colorMode = useContext(ColorModeContext)

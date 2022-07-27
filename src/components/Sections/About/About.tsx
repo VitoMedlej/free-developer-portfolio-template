@@ -113,7 +113,7 @@ const About = () => {
             </Grid>
 
         </Container>
-    <Divider/>
+    {/* <Divider/> */}
         </>
     
     )

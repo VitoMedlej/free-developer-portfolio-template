@@ -9,9 +9,10 @@
   height: 50px;
   width: 190px;
   font-size: 14px;
+  opacity: 0;
   z-index: 2;
-  -webkit-transition: .01s .23s ease-out all;
-  transition: .01s .23s ease-out all;
+  -webkit-transition: .4s ease-out all;
+  transition: .4s ease-out all;
   overflow: hidden;
 }
 

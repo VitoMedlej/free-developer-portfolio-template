@@ -1,3 +1,6 @@
+import { SvgIconTypeMap } from "@mui/material";
+import { OverridableComponent } from "@mui/material/OverridableComponent";
+
 export interface ICustomLink {
     text : string;
     href: string
@@ -17,6 +20,15 @@ export interface ICustomDrawer extends INavbar {
 }
 export interface IToolCard {
     title : string;
-    svg : any
+    svg : any;
+    className: string;
     filter ?: boolean
+}
+export interface IDrawerItem {
+    text : string;
+    Icon  : OverridableComponent<SvgIconTypeMap<{}, "svg">> & {
+        muiName: string;
+    }
+    url : string;
+    toggleDrawer: (state?: boolean ) => void
 }

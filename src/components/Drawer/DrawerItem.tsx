@@ -1,17 +1,17 @@
-import { ListItem, ListItemButton, ListItemIcon, ListItemText, SvgIconTypeMap } from "@mui/material";
-import { OverridableComponent } from "@mui/material/OverridableComponent";
+import { ListItem, ListItemButton, ListItemIcon} from "@mui/material";
 import Typography from '@mui/material/Typography';
+import { useRouter } from "next/router";
+import { IDrawerItem } from "../../Types/Types";
 
 
-interface IDrawerItem {
-    text : string;
-    Icon  : OverridableComponent<SvgIconTypeMap<{}, "svg">> & {
-        muiName: string;
-    }
-}
-const DrawerItem = ({text,Icon} :IDrawerItem) => {
+
+const DrawerItem = ({text,Icon,url,toggleDrawer} :IDrawerItem) => {
+    const router = useRouter()
   return (
-    <ListItem  disablePadding sx={{my:'.5em'}}>
+    <ListItem  
+    onClick={()=>{toggleDrawer(false);
+        router.push(`${url || '/'}`)}}
+    disablePadding sx={{my:'.5em'}}>
     <ListItemButton>
         <ListItemIcon>
             <Icon/>
