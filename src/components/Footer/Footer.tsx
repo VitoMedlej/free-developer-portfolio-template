@@ -80,7 +80,7 @@ function Footer() {
                             onClick={()=>gsap.to(window, {duration: 1, scrollTo: `#hero`})}
                             >Home</Typography>
                             <Link href='/contact'>Contact</Link>
-                            {/* <Link href='/dashboard/main'>Dashboard</Link> */}
+                         
                             <Link href='/about'>About</Link>
                         </Box>
 
