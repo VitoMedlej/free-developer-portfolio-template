@@ -3,16 +3,13 @@ body {
     padding: 0;
     box-sizing: border-box !important;
     font-family: 'Montserrat', sans-serif;
-    // cursor: none;
 }
 .img1 {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-// .secondary {
-//     color : #b9b9b9
-// }
+
 .br {
     border-radius: 6px;
 }
@@ -21,13 +18,14 @@ body {
 }
 a {
     text-decoration: none;
-  color: #0000EE; 
-
-     :visited { color: #551A8B; }
+    color: #0000EE;
+    :visited {
+        color: #551A8B;
+    }
 }
 .FooterLink {
-  color: #0000EE; 
-  cursor: pointer;
+    color: #0000EE;
+    cursor: pointer;
     // :visited { color: #551A8B; }
 }
 .swiper-slide,
@@ -42,7 +40,6 @@ a {
     height: 130px !important;
 }
 
-
 .ball {
     width: 20px;
     height: 20px;
@@ -53,16 +50,122 @@ a {
     border-radius: 50%;
     pointer-events: none;
     z-index: 24124124;
-  }
-  .t25o0 {
+}
+.t25o0 {
     transform: translateY(25px);
     opacity: 0;
-  }
-  .logoImg {
-      filter: invert(100%) sepia(1%) saturate(1%) hue-rotate(0) brightness(1209%) contrast(300%);
-      height:42px;
-    }
-    .small {
-    height:32px !important;
+}
+.logoImg {
+    filter: invert(100%) sepia(1%) saturate(1%) hue-rotate(0) brightness(1209%) contrast(300%);
+    height: 42px;
+}
+.small {
+    height: 32px !important;
 
+}
+.button {
+    font-family: 'Space Mono', monospace;
+    letter-spacing: 1px;
+    background: #0092ff;
+    color: white;
+    position: relative;
+    outline: none;
+    border: none;
+    height: 50px;
+    width: 190px;
+    font-size: 14px;
+    opacity: 0;
+    z-index: 2;
+    // transition: .01s .23s ease-out all;
+    transition: 0.4s ease-out all;
+    overflow: hidden;
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 55%;
+        background: #0092ff;
+        z-index: -1;
+        transition: 0.3s ease-in all;
     }
+    &:after {
+        content: '';
+        position: absolute;
+        left: -5%;
+        top: 5%;
+        height: 90%;
+        width: 5%;
+        background: white;
+        z-index: -1;
+        transition: 0.4s 0.02s ease-in all;
+    }
+    &:hover {
+        cursor: pointer;
+        color: transparent;
+        &:before {
+            left: 100%;
+            width: 25%;
+        }
+        &:after {
+            left: 100%;
+            width: 70%;
+        }
+        .icon-right.after:after {
+            left: -80px;
+            color: white;
+            transition: 0.2s 0.2s ease all;
+        }
+        .icon-right.after:before {
+            left: -104px;
+            top: 14px;
+            opacity: 0.2;
+            color: white;
+        }
+    }
+}
+
+.icon-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    &:after {
+        font-family: "FontAwesome";
+        content: '\2192';
+        font-size: 24px;
+        display: inline-block;
+        position: relative;
+        top: 23px;
+        margin-right: 4px;
+        transform: translate3D(0, -50%, 0);
+    }
+    &.after:after {
+        left: -250px;
+        color: black;
+        transition: 0.15s 0.25s ease left, 0.5s 0.05s ease color;
+    }
+    &.after:before {
+        content: 'Navigate';
+        position: absolute;
+        left: -230px;
+        top: 14px;
+        opacity: 0;
+        transition: 0.2s ease-in all;
+    }
+}
+
+.signature {
+    position: fixed;
+    font-family: sans-serif;
+    font-weight: 100;
+    bottom: 10px;
+    left: 0;
+    letter-spacing: 4px;
+    font-size: 10px;
+    width: 100vw;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+}
