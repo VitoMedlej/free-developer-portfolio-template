@@ -5,8 +5,13 @@ import CustomLink from '../Mui/CustomLink'
 import CloseIcon from '@mui/icons-material/Close';
 import {Links} from '../Navbar/Navbar';
 import DrawerItem from './DrawerItem';
+import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
+import gsap from 'gsap'
+
+
 
 const CustomDrawer = ({isOpen, toggleDrawer} : ICustomDrawer) => {
+    gsap.registerPlugin(ScrollToPlugin);
 
     return (
 
@@ -46,7 +51,10 @@ const CustomDrawer = ({isOpen, toggleDrawer} : ICustomDrawer) => {
                 height: '100%'
             }}>
                 {Links.map(link => {
-                    return <DrawerItem toggleDrawer={toggleDrawer} key={link.text} url={link.url} Icon={link.Icon} text={link.text}/>
+                    return <DrawerItem 
+                    onClick={ link.onClick }
+                    toggleDrawer={toggleDrawer} 
+                    key={link.text} url={link.url} Icon={link.Icon} text={link.text}/>
                 })}
             </Box>
         </Drawer>

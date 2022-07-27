@@ -2,16 +2,25 @@ import { ListItem, ListItemButton, ListItemIcon} from "@mui/material";
 import Typography from '@mui/material/Typography';
 import { useRouter } from "next/router";
 import { IDrawerItem } from "../../Types/Types";
+import gsap from 'gsap'
 
 
-
-const DrawerItem = ({text,Icon,url,toggleDrawer} :IDrawerItem) => {
+const DrawerItem = ({text,Icon,url,toggleDrawer,onClick} :IDrawerItem) => {
     const router = useRouter()
+    
   return (
     <ListItem  
     onClick={()=>{toggleDrawer(false);
-        router.push(`${url || '/'}`)}}
-    disablePadding sx={{my:'.5em'}}>
+       
+        router.push(`${url || '/'}`)
+       onClick && gsap.to(window, {
+            duration: 2,
+            scrollTo: `#ProjectSection`
+        })
+    
+    }}
+
+    disablePadding sx={{mb:'1em'}}>
     <ListItemButton>
         <ListItemIcon>
             <Icon/>
