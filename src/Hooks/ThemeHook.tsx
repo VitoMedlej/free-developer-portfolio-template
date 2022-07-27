@@ -1,13 +1,12 @@
 import { PaletteMode, createTheme } from '@mui/material';
-import { createContext, useMemo, useState } from 'react'
+import {  Dispatch, SetStateAction, useMemo, useState } from 'react'
 
 
 
 
 
-const ThemeHook = () => {
-    const [mode,
-        setMode] = useState < 'light' | 'dark' > ('light');
+const ThemeHook = (mode : 'light' | 'dark',setMode :  Dispatch<SetStateAction<"light" | "dark">>) => {
+  
     const color = mode === 'light'
     ? '#000000'
     : '#ffffff'
@@ -77,17 +76,8 @@ const ThemeHook = () => {
         }
     });
 
-    const Theme = useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
-
-    const colorMode = useMemo(() => ({
-        mode,
-        toggleColorMode: () => {
-            setMode((prevMode) => (prevMode === 'light'
-                ? 'dark'
-                : 'light'));
-        }
-    }), [],);
-    return {colorMode,Theme,getDesignTokens}
+  
+    return getDesignTokens
 }
 
 export default ThemeHook

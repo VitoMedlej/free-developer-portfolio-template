@@ -45,6 +45,7 @@ const ToolCard = ({title, svg, filter, className} : IToolCard) => {
             }}>
 
                 <Image
+                alt='Icon'
                     className={`${filter
                     ? 'filter '
                     : ''} icon`}

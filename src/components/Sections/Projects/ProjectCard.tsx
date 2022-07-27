@@ -69,7 +69,7 @@ const ProjectCard = ({
                 position: 'relative'
             }}>
 
-                <Image className='img1  ' layout='fill' src={`${img}`}/>
+                <Image alt='Project Image' className='img1  ' layout='fill' src={`${img}`}/>
             </Box>
             <Box
                 ref={ref}
@@ -138,7 +138,7 @@ const ProjectCard = ({
                         flexWrap: 'wrap',
                         mt: '1em'
                     }}>
-                        <a href={`${siteUrl}`} target="_blank">
+                        <a href={`${siteUrl}`} rel="noreferrer" target="_blank">
 
                             <Button
                                 variant='contained'
@@ -153,7 +153,7 @@ const ProjectCard = ({
                                 </Typography>
                             </Button>
                         </a>
-                        <a href={`${repoUrl}`} target="_blank">
+                        <a href={`${repoUrl}`} rel="noreferrer" target="_blank">
 
                             <Button
                                 variant='text'

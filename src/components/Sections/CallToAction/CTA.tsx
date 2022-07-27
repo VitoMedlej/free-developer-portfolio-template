@@ -53,7 +53,7 @@ const CTA = () => {
                         }
                     }}
                         fontWeight='600'>
-                        What's holding you back? Send me a message!
+                        What&apos;s holding you back? Send me a message!
                     </Typography>
                     <Box
 

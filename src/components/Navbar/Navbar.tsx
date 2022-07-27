@@ -3,7 +3,7 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 
-import {useContext,} from 'react';
+import {useContext} from 'react';
 import CustomLink from '../Mui/CustomLink';
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import HomeIcon from '@mui/icons-material/Home';
@@ -27,12 +27,13 @@ export const Links = [
         text: 'Projects',
         Icon: AccountTreeIcon,
         url: '/',
-        onClick: true
+        
     },
     {
         text: 'Theme',
         Icon: WbSunnyIcon,
-        url: '/'
+        url: '/',
+        isToggleTheme : true
     }
 ]
 

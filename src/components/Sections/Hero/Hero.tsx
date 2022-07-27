@@ -67,7 +67,7 @@ const Hero = () => {
                             maxWidth: '570px',
                             fontWeight: '300'
                         }}>
-                            Whether it's a mobile application or web application, we are a team of
+                            Whether it&apos;s a mobile application or web application, we are a team of
                             high-performing app developers Lebanese that turn your idea into reality.
                         </Typography>
 
@@ -203,7 +203,7 @@ const Hero = () => {
                                     fontSize: '1em',
                                     padding: '1em'
                                 }}>
-                                    Whether it's a mobile application or web application, we are a team.
+                                    Whether it&apos;s a mobile application or web application, we are a team.
                                 </Typography>
 
                             </Box>

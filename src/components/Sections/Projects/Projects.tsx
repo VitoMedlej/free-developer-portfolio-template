@@ -70,7 +70,7 @@ const Projects = () => {
                         sm: '1em'
                     }
                 }}>
-                    Here are some of my projects that I've built.
+                    Here are some of my projects that I&apos;ve built.
                 </Typography>
 
             </Grid>

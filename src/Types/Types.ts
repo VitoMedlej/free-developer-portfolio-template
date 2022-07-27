@@ -29,7 +29,7 @@ export interface IDrawerItem {
     Icon  : OverridableComponent<SvgIconTypeMap<{}, "svg">> & {
         muiName: string;
     }
-    onClick : any;
+    isToggleTheme ?: boolean;
     url : string;
     toggleDrawer: (state?: boolean ) => void
 }

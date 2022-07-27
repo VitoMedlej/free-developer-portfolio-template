@@ -1,5 +1,4 @@
 import {Box, Container, Divider, Drawer, IconButton} from '@mui/material'
-import {useState} from 'react'
 import {ICustomDrawer} from '../../Types/Types'
 import CustomLink from '../Mui/CustomLink'
 import CloseIcon from '@mui/icons-material/Close';
@@ -52,7 +51,7 @@ const CustomDrawer = ({isOpen, toggleDrawer} : ICustomDrawer) => {
             }}>
                 {Links.map(link => {
                     return <DrawerItem 
-                    onClick={ link.onClick }
+                    isToggleTheme={link?.isToggleTheme}
                     toggleDrawer={toggleDrawer} 
                     key={link.text} url={link.url} Icon={link.Icon} text={link.text}/>
                 })}
