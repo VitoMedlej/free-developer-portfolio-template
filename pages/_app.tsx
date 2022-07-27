@@ -8,6 +8,10 @@ import {createTheme} from "@mui/material"
 import {createContext, useMemo, useState} from 'react'
 import CssBaseline from '@mui/material/CssBaseline';
 import ThemeHook from '../src/Hooks/ThemeHook'
+
+
+
+
 export const ColorModeContext = createContext({
     mode: 'dark',
     toggleColorMode: () => {}

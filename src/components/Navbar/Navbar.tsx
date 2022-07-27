@@ -12,6 +12,7 @@ import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import gsap from 'gsap'
 import { INavbar } from '../../Types/Types';
 import { ColorModeContext } from '../../../pages/_app';
+import { Box } from '@mui/material';
 
 export const Links = [
     {
@@ -47,7 +48,7 @@ const Navbar = ({toggleDrawer} : INavbar) => {
             sx={{
             background: 'transparent',
             boxShadow: 'rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px',
-            py: '.25em',
+            py: '.45em',
             zIndex: '555',
             backdropFilter: 'blur(1px)',
             position: 'fixed'
@@ -61,7 +62,12 @@ const Navbar = ({toggleDrawer} : INavbar) => {
                 margin: '0 auto'
             }}
                 maxWidth="lg">
-                <CustomLink color='#0092ff' fontWeight='600' text='LOGO' href='/'/>
+
+                <Box sx={{display: 'flex',alignItems:'center'}}>
+
+                    <img className='logoImg' src="https://res.cloudinary.com/dwcu3wcol/image/upload/v1658929513/log-removebg-preview_fygpsd.png" alt="" />
+                <CustomLink color='white' fontWeight='600' text='Medlej' href='/'/>
+                </Box>
 
                 <IconButton
                     sx={{

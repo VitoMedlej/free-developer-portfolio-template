@@ -7,30 +7,45 @@ import DrawerItem from './DrawerItem';
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
 import gsap from 'gsap'
 
-
-
 const CustomDrawer = ({isOpen, toggleDrawer} : ICustomDrawer) => {
     gsap.registerPlugin(ScrollToPlugin);
 
     return (
 
         <Drawer anchor={'right'} open={isOpen} onClose={() => toggleDrawer(false)}>
-            <Container
+            <Box
+
                 sx={{
-                zIndex: '555555',
+            px:'1em',
+                    zIndex: '555555',
                 display: 'flex',
-                width: '290px',
+                width: '300px',
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 margin: '0 auto'
             }}>
 
-                <CustomLink
+                {/* <CustomLink
                     handleClick={() => toggleDrawer(false)}
                     fontWeight='600'
-                    text='LOGO'
+                    text='VITO'
                     href='/'
-                    color='#0092ff'/>
+                    color='#0092ff'/> */}
+                <Box
+                onClick={() => toggleDrawer(false)}
+                    sx={{
+                    display: 'flex',
+                    alignItems: 'center'
+                }}>
+
+                    <img
+                        className='logoImg small'
+                        src="https://res.cloudinary.com/dwcu3wcol/image/upload/v1658929513/log-removebg-preview_fygpsd.png"
+                        alt=""/>
+                    <CustomLink color='white' fontWeight='600' text='Medlej' href='/'/>
+                </Box>
+
+
                 <IconButton
                     onClick={() => toggleDrawer(false)}
                     size="large"
@@ -41,7 +56,7 @@ const CustomDrawer = ({isOpen, toggleDrawer} : ICustomDrawer) => {
                     aria-label="menu">
                     <CloseIcon/>
                 </IconButton>
-            </Container>
+            </Box>
             <Divider/>
 
             <Box
@@ -50,10 +65,14 @@ const CustomDrawer = ({isOpen, toggleDrawer} : ICustomDrawer) => {
                 height: '100%'
             }}>
                 {Links.map(link => {
-                    return <DrawerItem 
-                    isToggleTheme={link?.isToggleTheme}
-                    toggleDrawer={toggleDrawer} 
-                    key={link.text} url={link.url} Icon={link.Icon} text={link.text}/>
+                    return <DrawerItem
+                        isToggleTheme={link
+                        ?.isToggleTheme}
+                        toggleDrawer={toggleDrawer}
+                        key={link.text}
+                        url={link.url}
+                        Icon={link.Icon}
+                        text={link.text}/>
                 })}
             </Box>
         </Drawer>
