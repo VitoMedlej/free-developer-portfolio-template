@@ -10,9 +10,10 @@ import HomeIcon from '@mui/icons-material/Home';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import gsap from 'gsap'
-import { INavbar } from '../../Types/Types';
-import { ColorModeContext } from '../../../pages/_app';
-import { Box } from '@mui/material';
+import {INavbar} from '../../Types/Types';
+import {ColorModeContext} from '../../../pages/_app';
+import {Box} from '@mui/material';
+import Logo from '../Logo/Logo';
 
 export const Links = [
     {
@@ -23,18 +24,15 @@ export const Links = [
         text: 'Contact',
         Icon: AlternateEmailIcon,
         url: '/contact'
-    },
-    {
+    }, {
         text: 'Projects',
         Icon: AccountTreeIcon,
-        url: '/',
-        
-    },
-    {
+        url: '/'
+    }, {
         text: 'Theme',
         Icon: WbSunnyIcon,
         url: '/',
-        isToggleTheme : true
+        isToggleTheme: true
     }
 ]
 
@@ -63,11 +61,7 @@ const Navbar = ({toggleDrawer} : INavbar) => {
             }}
                 maxWidth="lg">
 
-                <Box sx={{display: 'flex',alignItems:'center'}}>
-
-                    <img className='logoImg' src="https://res.cloudinary.com/dwcu3wcol/image/upload/v1658929513/log-removebg-preview_fygpsd.png" alt="" />
-                <CustomLink color='white' fontWeight='600' text='Medlej' href='/'/>
-                </Box>
+                <Logo color={color} toggleDrawer={toggleDrawer} colorMode={colorMode}/>
 
                 <IconButton
                     sx={{

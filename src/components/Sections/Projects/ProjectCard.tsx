@@ -69,7 +69,7 @@ const ProjectCard = ({
                 position: 'relative'
             }}>
 
-                <Image alt='Project Image' className='img1  ' layout='fill' src={`${img}`}/>
+                <Image priority alt='Project Image' className='img1  ' layout='fill' src={`${img}`}/>
             </Box>
             <Box
                 ref={ref}
@@ -160,7 +160,8 @@ const ProjectCard = ({
                                 sx={{
                                 ...btnStyles,
                                 padding: '.5em .8em',
-                                color: '#0092ff'
+                                color: '#0092ff',
+                                ':hover' :{   color: '#0092ff'}
                             }}>
                                 <Typography fontSize='12px'>
                                     Check Code

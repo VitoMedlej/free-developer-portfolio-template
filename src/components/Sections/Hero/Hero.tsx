@@ -48,6 +48,7 @@ const Hero = () => {
                                 sm: '3.4em',
                                 md: '3.8em'
                             },
+                            textAlign: 'left',
                             transform: 'translateY(40px)',
                             opacity: 0,
                             pt: '1em',
@@ -59,6 +60,7 @@ const Hero = () => {
                             variant='h2'
                             className='secondary t2 t25o0'
                             sx={{
+                            textAlign: 'left',
                             pt: '1.5em',
                             fontSize: {
                                 xs: '.9em',
@@ -76,32 +78,33 @@ const Hero = () => {
                             my: '2.5em',
                             gap: '.8em',
                             display: 'flex',
-                            flexWrap: 'wrap'
+                            flexWrap: 'wrap',
+                            alignItems: 'center'
                         }}>
 
-                            <Button
+                            <button
+                                className="  b1 explore offset "
+                                style={{
+                                opacity: 0
+                            }}
                                 onClick={() => gsap.to(window, {
                                 duration: 2,
                                 scrollTo: `#ProjectSection`
-                            })}
-                                sx={{
-                                transform: 'translateY(25px)',
-                                ':hover': {
-                                    background: '#0384e4'
-                                }
-                            }}
-                                className="button  b1 explore ">
-                                Explore
-                                <span className="icon-right"></span>
-                                <span className="icon-right after"></span>
-                            </Button>
+                            })}>
+                                View Projects
+                            </button>
                             <Button
                                 className='b2'
                                 sx={{
                                 ...btnStyles,
-                                opacity: 0
+                                opacity: 0,
+                                height: 'max-content',
+                                padding: '1em 1.5em',
+                                ":hover": {
+                                    color: '#0092ff'
+                                }
                             }}
-                                variant='outlined'>
+                                variant='text'>
                                 <Typography fontSize='14px'>
                                     DOWNLOAD CV
                                 </Typography>
@@ -160,7 +163,7 @@ const Hero = () => {
                                 zIndex: '2'
                             }}
                                 className='img1'
-                                src={`https://vitomedl.netlify.app/static/media/ane.3273a2f2.png`}
+                                src={`https://res.cloudinary.com/dwcu3wcol/image/upload/v1659004630/295707904_575793663989265_2499375159926945013_n_qzltel.jpg`}
                                 alt=""/>
                             <Box
                                 className='gradientBg'

@@ -56,7 +56,7 @@ a :visited {
   position: fixed;
   top: 0;
   left: 0;
-  border: 3px solid dodgerblue;
+  border: 3px solid #0092ff;
   border-radius: 50%;
   pointer-events: none;
   z-index: 24124124;
@@ -78,126 +78,92 @@ a :visited {
   height: 32px !important;
 }
 
-.button {
-  font-family: 'Space Mono', monospace;
-  letter-spacing: 1px;
-  background: #0092ff;
-  color: white;
-  position: relative;
-  outline: none;
-  border: none;
-  height: 50px;
-  width: 190px;
-  font-size: 14px;
-  opacity: 0;
-  z-index: 2;
-  -webkit-transition: 0.4s ease-out all;
-  transition: 0.4s ease-out all;
-  overflow: hidden;
+.fill:hover,
+.fill:focus {
+  -webkit-box-shadow: inset 0 0 0 2em var(--hover);
+          box-shadow: inset 0 0 0 2em var(--hover);
 }
 
-.button:before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 55%;
-  background: #0092ff;
-  z-index: -1;
-  -webkit-transition: 0.3s ease-in all;
-  transition: 0.3s ease-in all;
+.pulse:hover,
+.pulse:focus {
+  -webkit-animation: pulse 1s;
+          animation: pulse 1s;
+  -webkit-box-shadow: 0 0 0 2em transparent;
+          box-shadow: 0 0 0 2em transparent;
 }
 
-.button:after {
-  content: '';
-  position: absolute;
-  left: -5%;
-  top: 5%;
-  height: 90%;
-  width: 5%;
-  background: white;
-  z-index: -1;
-  -webkit-transition: 0.4s 0.02s ease-in all;
-  transition: 0.4s 0.02s ease-in all;
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 var(--hover);
+            box-shadow: 0 0 0 0 var(--hover);
+  }
 }
 
-.button:hover {
-  cursor: pointer;
-  color: transparent;
+@keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 var(--hover);
+            box-shadow: 0 0 0 0 var(--hover);
+  }
 }
 
-.button:hover:before {
-  left: 100%;
-  width: 25%;
+.close:hover,
+.close:focus {
+  -webkit-box-shadow: inset -3.5em 0 0 0 var(--hover), inset 3.5em 0 0 0 var(--hover);
+          box-shadow: inset -3.5em 0 0 0 var(--hover), inset 3.5em 0 0 0 var(--hover);
 }
 
-.button:hover:after {
-  left: 100%;
-  width: 70%;
+.raise:hover,
+.raise:focus {
+  -webkit-box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+          box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  -webkit-transform: translateY(-0.25em);
+          transform: translateY(-0.25em);
 }
 
-.button:hover .icon-right.after:after {
-  left: -80px;
-  color: white;
-  -webkit-transition: 0.2s 0.2s ease all;
-  transition: 0.2s 0.2s ease all;
+.up:hover,
+.up:focus {
+  -webkit-box-shadow: inset 0 -3.25em 0 0 var(--hover);
+          box-shadow: inset 0 -3.25em 0 0 var(--hover);
 }
 
-.button:hover .icon-right.after:before {
-  left: -104px;
-  top: 14px;
-  opacity: 0.2;
-  color: white;
+.slide:hover,
+.slide:focus {
+  -webkit-box-shadow: inset 6.5em 0 0 0 var(--hover);
+          box-shadow: inset 6.5em 0 0 0 var(--hover);
 }
 
-.icon-right {
-  position: absolute;
-  top: 0;
-  right: 0;
+.offset {
+  padding: .75em 2.5em;
+  -webkit-box-shadow: 0.3em 0.3em 0 0 var(--color), inset 0.3em 0.3em 0 0 var(--color);
+          box-shadow: 0.3em 0.3em 0 0 var(--color), inset 0.3em 0.3em 0 0 var(--color);
 }
 
-.icon-right:after {
-  font-family: "FontAwesome";
-  content: '\2192';
-  font-size: 24px;
-  display: inline-block;
-  position: relative;
-  top: 23px;
-  margin-right: 4px;
-  -webkit-transform: translate3D(0, -50%, 0);
-          transform: translate3D(0, -50%, 0);
+.offset:hover, .offset:focus {
+  -webkit-box-shadow: 0 0 0 0 var(--hover), inset 6em 3.5em 0 0 var(--hover);
+          box-shadow: 0 0 0 0 var(--hover), inset 6em 3.5em 0 0 var(--hover);
 }
 
-.icon-right.after:after {
-  left: -250px;
-  color: black;
-  -webkit-transition: 0.15s 0.25s ease left, 0.5s 0.05s ease color;
-  transition: 0.15s 0.25s ease left, 0.5s 0.05s ease color;
+.offset {
+  --color: #0092ff;
+  --hover: #0092ff;
 }
 
-.icon-right.after:before {
-  content: 'Navigate';
-  position: absolute;
-  left: -230px;
-  top: 14px;
-  opacity: 0;
-  -webkit-transition: 0.2s ease-in all;
-  transition: 0.2s ease-in all;
+button {
+  color: var(--color);
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
 }
 
-.signature {
-  position: fixed;
-  font-family: sans-serif;
-  font-weight: 100;
-  bottom: 10px;
-  left: 0;
-  letter-spacing: 4px;
-  font-size: 10px;
-  width: 100vw;
-  text-align: center;
-  color: white;
-  text-transform: uppercase;
-  text-decoration: none;
+button:hover, button:focus {
+  border-color: var(--hover);
+  color: #fff;
+}
+
+button {
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
 }
 /*# sourceMappingURL=styles.css.map */

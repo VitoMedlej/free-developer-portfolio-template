@@ -6,18 +6,23 @@ import {Links} from '../Navbar/Navbar';
 import DrawerItem from './DrawerItem';
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
 import gsap from 'gsap'
+import {ColorModeContext} from '../../../pages/_app';
+import {useContext} from 'react';
+import Logo from '../Logo/Logo';
 
 const CustomDrawer = ({isOpen, toggleDrawer} : ICustomDrawer) => {
     gsap.registerPlugin(ScrollToPlugin);
-
+    const colorMode = useContext(ColorModeContext)
+    const color = colorMode.mode === 'light'
+        ? 'black'
+        : 'white'
     return (
 
         <Drawer anchor={'right'} open={isOpen} onClose={() => toggleDrawer(false)}>
             <Box
-
                 sx={{
-            px:'.5em',
-                    zIndex: '555555',
+                px: '.5em',
+                zIndex: '555555',
                 display: 'flex',
                 width: '300px',
                 justifyContent: 'space-between',
@@ -31,33 +36,28 @@ const CustomDrawer = ({isOpen, toggleDrawer} : ICustomDrawer) => {
                     text='VITO'
                     href='/'
                     color='#0092ff'/> */}
-                <Box
-                onClick={() => toggleDrawer(false)}
-                    sx={{
-                    display: 'flex',
-                    alignItems: 'center'
-                }}>
-
-                    <img
-                        className='logoImg small'
-                        src="https://res.cloudinary.com/dwcu3wcol/image/upload/v1658929513/log-removebg-preview_fygpsd.png"
-                        alt=""/>
-                    <CustomLink color='white' fontWeight='600' text='Medlej' href='/'/>
-                </Box>
-
+                <Logo color={color} toggleDrawer={toggleDrawer} colorMode={colorMode} />
 
                 <IconButton
                     onClick={() => toggleDrawer(false)}
                     size="large"
                     sx={{
-                    padding: '.5em 0'
+                    padding: 0,
+                    ":hover": {
+                        color
+                    }
                 }}
                     edge="start"
                     aria-label="menu">
-                    <CloseIcon/>
+                    <CloseIcon
+                        sx={{
+                        margin: '.6em .5em'
+                    }}/>
                 </IconButton>
             </Box>
-            <Divider/>
+            <Divider sx={{
+                borderColor: '#565656'
+            }}/>
 
             <Box
                 sx={{

@@ -18,7 +18,7 @@ const HeroSectionAnimation = (q:gsap.utils.SelectorFunc) => {
     gsap.to(q(".b1"), {
         delay: '1.15',
         opacity: "1",
-        y: 0,
+       
         duration: '.3'
     });
     gsap.to(q(".b2"), {

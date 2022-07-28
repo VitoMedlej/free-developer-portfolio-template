@@ -5,13 +5,33 @@ import {useEffect, useRef} from "react";
 import gsap from 'gsap'
 const CTA = () => {
     const router = useRouter()
- 
-    useEffect(() => {
-    
 
-        gsap.to(".CTAbox", {left: '0%',duration:.8,scrollTrigger:{trigger:'.CTAbox',start:'top 65%'}});
-        gsap.to(".CTAcontainer p", {delay:.8,opacity: 1,scrollTrigger:{trigger:'.CTAbox',start:'top 65%'}});
-        gsap.to(".CTAcontainer div button", {delay:.95,opacity: 1,scrollTrigger:{trigger:'.CTAbox',start:'top 65%'}});
+    useEffect(() => {
+
+        gsap.to(".CTAbox", {
+            left: '0%',
+            duration: .8,
+            scrollTrigger: {
+                trigger: '.CTAbox',
+                start: 'top 65%'
+            }
+        });
+        gsap.to(".CTAcontainer p", {
+            delay: .8,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: '.CTAbox',
+                start: 'top 65%'
+            }
+        });
+        gsap.to(".CTAcontainer div button", {
+            delay: .95,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: '.CTAbox',
+                start: 'top 65%'
+            }
+        });
 
     }, [])
 
@@ -43,7 +63,7 @@ const CTA = () => {
                 }}>
 
                     <Typography
-                    className='t25o0'
+                        className='t25o0'
                         sx={{
                         textAlign: 'center',
                         fontSize: {
@@ -56,7 +76,6 @@ const CTA = () => {
                         What&apos;s holding you back? Send me a message!
                     </Typography>
                     <Box
-
                         sx={{
                         margin: '1.5em 0 auto',
                         display: 'flex',
@@ -64,19 +83,20 @@ const CTA = () => {
                         justifyContent: 'center'
                     }}>
 
+                     
                         <Button
-                            onClick={() => router.push('/contact')}
                             sx={{
-                            border: '1px solid',
-                            mt:'1.5em',
+                            color: 'white',
+                            border: '1px solid white',
+                            mt: '.5em',
                             ':hover': {
-                                background: '#0384e4'
-                            }
+                                background: 'white',
+                                color: '#0092ff'
+                            },
+                            padding: '.5em 3.5em'
                         }}
-                            className="button br2 explore">
-                            Contact Me
-                            <span className="icon-right"></span>
-                            <span className="icon-right after"></span>
+                            variant='outlined'>
+                            Contact
                         </Button>
                     </Box>
 

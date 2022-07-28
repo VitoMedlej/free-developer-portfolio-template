@@ -34,10 +34,9 @@ const Projects = () => {
 
         MainTitleAnimation('.title3', '.title4')
 
-
     }, [])
     return ( <> <Container
-    id='ProjectSection'
+        id='ProjectSection'
         maxWidth='lg'
         sx={{
         margin: '0 auto',
@@ -100,10 +99,15 @@ const Projects = () => {
                 mt: '3em'
             }}>
 
-                <Button sx={btnStyles} variant='outlined'>
-                    <Typography fontSize='14px'>
-                        Load More
-                    </Typography>
+                <Button
+                    variant='contained'
+                    sx={{
+                    padding: '.5em 3.5em',
+                    background: 'transparent',
+                    border: '1px solid',
+                    color: '#0092ff'
+                }}>
+                    Load More
                 </Button>
             </Box>
         </Grid>

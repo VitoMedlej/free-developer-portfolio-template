@@ -24,9 +24,11 @@ const DrawerItem = ({text, Icon, url, toggleDrawer, isToggleTheme} : IDrawerItem
         }}
             disablePadding
             sx={{
-            mb: '1em'
+            my: '.5em',
+         
+
         }}>
-            <ListItemButton>
+            <ListItemButton sx={{   py:'.75em',}}>
                 <ListItemIcon>
                     <Icon/>
                 </ListItemIcon>
