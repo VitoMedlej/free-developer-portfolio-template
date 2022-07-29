@@ -20,6 +20,14 @@ const MainTitleAnimation = (t1:string,t2:string) => {
             start: 'center 65%'
         }
     })
+    gsap.to('.loadMore',{
+        duration:.5,
+        opacity:1,
+        scrollTrigger: {
+            trigger : '.loadMore',
+            start : 'top 90%'
+        }
+    })
 }
 
 export default MainTitleAnimation

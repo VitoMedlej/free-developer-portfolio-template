@@ -24,11 +24,11 @@ const CTA = () => {
                 start: 'top 65%'
             }
         });
-        gsap.to(".CTAcontainer div button", {
+        gsap.to(".ctabtn", {
             delay: .95,
             opacity: 1,
             scrollTrigger: {
-                trigger: '.CTAbox',
+                trigger: '.ctabtn',
                 start: 'top 65%'
             }
         });
@@ -85,8 +85,10 @@ const CTA = () => {
 
                      
                         <Button
+                            className='ctabtn'
                             sx={{
                             color: 'white',
+                            opacity:0,
                             border: '1px solid white',
                             mt: '.5em',
                             ':hover': {

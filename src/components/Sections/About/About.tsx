@@ -58,7 +58,6 @@ const About = () => {
                             backgroundSize: '15px 13px'
                         }}></Box>
                         <Image
-                        priority
                             alt='Personal Image'
                             className='img1 '
                             layout='fill'

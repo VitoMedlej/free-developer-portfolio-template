@@ -3,6 +3,8 @@ import gsap from 'gsap';
 import {useRef, useEffect} from 'react';
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
 import HeroSectionAnimation from '../../../gsap/HeroSectionAnimation';
+import Image from 'next/image'
+
 export const btnStyles = {
     padding: '.77em 1.5em',
     borderRadius: '3px'
@@ -82,17 +84,19 @@ const Hero = () => {
                             alignItems: 'center'
                         }}>
 
-                            <button
+                            <Button
                                 className="  b1 explore offset "
-                                style={{
-                                opacity: 0
+                                sx={{
+                                opacity: 0,
+                                borderRadius:0,
+                                flex:{xs:1,sm:'inherit'},
                             }}
                                 onClick={() => gsap.to(window, {
                                 duration: 2,
                                 scrollTo: `#ProjectSection`
                             })}>
                                 View Projects
-                            </button>
+                            </Button>
                             <Button
                                 className='b2'
                                 sx={{
@@ -100,6 +104,7 @@ const Hero = () => {
                                 opacity: 0,
                                 height: 'max-content',
                                 padding: '1em 1.5em',
+                                width:{xs:'100%',sm:'auto'},
                                 ":hover": {
                                     color: '#0092ff'
                                 }
@@ -156,7 +161,11 @@ const Hero = () => {
                             }
                         }}>
 
-                            <img
+                            <Image
+
+                            priority
+                            layout='fill'
+
                                 style={{
                                 opacity: 0,
                                 borderRadius: '6px',

@@ -1,22 +1,10 @@
-import {Box, Typography, Button, Divider} from '@mui/material';
+import {Box, Typography, Button} from '@mui/material';
 import Image from 'next/image'
-import {useEffect, useLayoutEffect, useRef, useState} from 'react';
+import {useEffect, useRef, useState} from 'react';
 import {btnStyles} from '../Hero/Hero';
+import gsap from 'gsap';
 
-// let card = document.querySelector('.card');
-// document.addEventListener('mousemove', function(e) {   let xAxis =
-// (window.innerWidth / 2 - e.pageX) / 15;   let yAxis = (window.innerHeight / 2
-// - e.pageY) / 10;   card.style.transform = `rotateY(${xAxis}deg)
-// rotateX(${yAxis}deg)`; });
-
-const ProjectCard = ({
-    isReversed,
-    img,
-    repoUrl,
-    siteUrl,
-    title,
-    description
-} : any) => {
+const ProjectCard = ({isReversed, img,className, repoUrl, siteUrl, title} : any) => {
 
     const ref = useRef(null);
 
@@ -28,17 +16,17 @@ const ProjectCard = ({
         setCursorPosition({y: e.screenY, x: e.screenX})
     }
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         if (ref && ref.current) 
             setElementSize({x: ref.current['offsetWidth'], y: ref.current['offsetHeight']});
-
         }
     , []);
-
+   
     const rotation = `rotateY(${ (elementSize.x / 2 - cursorPosition.x) / 25}deg) rotateX(${ (elementSize.y / 2 - cursorPosition.y) / 30}deg)`
 
     return (
         <Box
+            className={className}
             sx={{
             display: 'flex',
             my: {
@@ -52,7 +40,8 @@ const ProjectCard = ({
                     ? 'row'
                     : 'row-reverse'}`
             },
-            alignItems: 'center'
+            alignItems: 'center',
+            transform: isReversed ?  'translateX(-150%)'  : 'translateX(150%)'
         }}>
             <Box
                 sx={{
@@ -69,7 +58,7 @@ const ProjectCard = ({
                 position: 'relative'
             }}>
 
-                <Image priority alt='Project Image' className='img1  ' layout='fill' src={`${img}`}/>
+                <Image alt='Project Image' className='img1  ' layout='fill' src={`${img}`}/>
             </Box>
             <Box
                 ref={ref}
@@ -161,7 +150,9 @@ const ProjectCard = ({
                                 ...btnStyles,
                                 padding: '.5em .8em',
                                 color: '#0092ff',
-                                ':hover' :{   color: '#0092ff'}
+                                ':hover': {
+                                    color: '#0092ff'
+                                }
                             }}>
                                 <Typography fontSize='12px'>
                                     Check Code
