@@ -11,7 +11,7 @@ import Footer from "../src/components/Footer/Footer";
 const Layout = ({ title ,children } : ILayout) => {
   const [isOpen,setOpen] = useState(false)
     const toggleDrawer = (state?:boolean) => {
-      setOpen(state ? state : !isOpen)
+      setOpen(state !== undefined ? state : !isOpen)
     }
 
   return (

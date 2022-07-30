@@ -1,5 +1,4 @@
 import gsap from 'gsap'
-import { useRef } from 'react';
 
 const CursorAnimation = (ball :  Element | null) => {
     gsap.set(".ball", {xPercent: -50, yPercent: -50});
