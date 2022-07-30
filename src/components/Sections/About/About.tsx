@@ -78,8 +78,8 @@ const About = () => {
                             },
                             py: '.5em',
                             pt: {
-                                xs: '1.5em',
-                                sm: '.5em'
+                                xs: '1.8em',
+                                md:0,
                             }
                         }}
                             fontWeight='600'>

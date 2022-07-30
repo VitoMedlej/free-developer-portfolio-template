@@ -28,7 +28,7 @@ const CTA = () => {
             delay: .95,
             opacity: 1,
             scrollTrigger: {
-                trigger: '.ctabtn',
+                trigger: '.CTAbox',
                 start: 'top 65%'
             }
         });
