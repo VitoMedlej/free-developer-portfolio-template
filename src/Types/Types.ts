@@ -33,3 +33,16 @@ export interface IDrawerItem {
     url : string;
     toggleDrawer: (state?: boolean ) => void
 }
+export interface IProjects {
+
+    img: string;
+    title: string;
+    siteUrl: string;
+    repoUrl: string;
+    description: string;
+
+}
+export interface IProjectCard extends IProjects{
+    isReversed ?: boolean;
+    className ?: string;
+}

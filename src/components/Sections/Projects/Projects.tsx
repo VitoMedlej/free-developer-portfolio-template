@@ -11,25 +11,11 @@ import ProjectCard from "./ProjectCard"
 import {useEffect} from 'react';
 import MainTitleAnimation from "../../../gsap/MainTitleAnimation";
 import gsap from 'gsap'
+import { IProjects } from "../../../Types/Types";
 
-const projects = [
-    {
-        img: 'https://res.cloudinary.com/dwcu3wcol/image/upload/v1658233071/photo-151729298771' +
-                '9-0369a794ec0f_qexfcf.jpg',
-        title: 'El-Vito Ecommerce shop',
-        siteUrl: 'https://el-vito.netlify.app/',
-        repoUrl: 'https://github.com/VitoMedlej/FullStack-Ecom',
-        description: `lorem20 lorem20 lorem20 lorem20 lorem20 lorem20 lorem20 lorem20 lorem20 lorem20 lorem20 lorem20`
-    }, {
-        img: 'https://res.cloudinary.com/dwcu3wcol/image/upload/v1658232753/photo-158870254792' +
-                '3-7093a6c3ba33_nxjka5.jpg',
-        siteUrl: 'https://elvito-property.netlify.app/',
-        repoUrl: 'https://github.com/VitoMedlej/elvito-property',
-        title: 'Elvito real-estate buy/sell project',
-        description: ''
-    }
-]
-const Projects = () => {
+
+
+const Projects = ({projectsArray} : IProjects[] | any ) => {
 
     useEffect(() => {
 
@@ -37,7 +23,7 @@ const Projects = () => {
 
         setTimeout(() => {
 
-            for (let i = 0; i < projects.length; i++) {
+            for (let i = 0; i < projectsArray.length; i++) {
 
                 gsap.to(`.p${i}`, {
                     duration: .8,
@@ -100,7 +86,7 @@ const Projects = () => {
                         mt: '3em'
                     }}>
 
-                        {projects.map((project, index) => {
+                        {projectsArray && projectsArray.map((project:any, index:number) => {
                             return <ProjectCard
                                 className={`p${index}`}
                                 isReversed={index % 2 === 0
@@ -110,6 +96,7 @@ const Projects = () => {
                                 repoUrl={project.repoUrl}
                                 title={project.title}
                                 img={project.img}
+                                description={project.description}
                                 key={project.title}/>
                         })}
 

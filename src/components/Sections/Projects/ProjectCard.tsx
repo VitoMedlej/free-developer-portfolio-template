@@ -1,10 +1,17 @@
 import {Box, Typography, Button} from '@mui/material';
-import Image from 'next/image'
 import {useEffect, useRef, useState} from 'react';
+import {IProjectCard} from '../../../Types/Types';
 import {btnStyles} from '../Hero/Hero';
-import gsap from 'gsap';
 
-const ProjectCard = ({isReversed, img,className, repoUrl, siteUrl, title} : any) => {
+const ProjectCard = ({
+    isReversed,
+    img,
+    className,
+    repoUrl,
+    siteUrl,
+    title,
+    description
+} : IProjectCard) => {
 
     const ref = useRef(null);
 
@@ -21,7 +28,7 @@ const ProjectCard = ({isReversed, img,className, repoUrl, siteUrl, title} : any)
             setElementSize({x: ref.current['offsetWidth'], y: ref.current['offsetHeight']});
         }
     , []);
-   
+
     const rotation = `rotateY(${ (elementSize.x / 2 - cursorPosition.x) / 25}deg) rotateX(${ (elementSize.y / 2 - cursorPosition.y) / 30}deg)`
 
     return (
@@ -41,7 +48,9 @@ const ProjectCard = ({isReversed, img,className, repoUrl, siteUrl, title} : any)
                     : 'row-reverse'}`
             },
             alignItems: 'center',
-            transform: isReversed ?  'translateX(-150%)'  : 'translateX(150%)'
+            transform: isReversed
+                ? 'translateX(-150%)'
+                : 'translateX(150%)'
         }}>
             <Box
                 sx={{
@@ -58,7 +67,7 @@ const ProjectCard = ({isReversed, img,className, repoUrl, siteUrl, title} : any)
                 position: 'relative'
             }}>
 
-                <Image alt='Project Image' className='img1  ' layout='fill' src={`${img}`}/>
+                <img alt='Project Image' className='img1' src={`${img}`}/>
             </Box>
             <Box
                 ref={ref}
@@ -111,14 +120,10 @@ const ProjectCard = ({isReversed, img,className, repoUrl, siteUrl, title} : any)
                         color='black'
                         variant='h3'
                         sx={{
-                        fontSize: '.9em',
+                        fontSize: {xs:'.83em',sm:'.9em'},
                         fontWeight: '300'
                     }}>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit illo, voluptate
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit illo, voluptate
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit illo, voluptate
-                        culpa ad perferendis, nostrum est totam voluptatum minima corporis vero
-                        necessitatibus rerum, sit veritatis?
+                        {description}
                     </Typography>
                     <Box
                         sx={{
