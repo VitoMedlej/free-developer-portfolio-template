@@ -11,11 +11,9 @@ import ProjectCard from "./ProjectCard"
 import {useEffect} from 'react';
 import MainTitleAnimation from "../../../gsap/MainTitleAnimation";
 import gsap from 'gsap'
-import { IProjects } from "../../../Types/Types";
+import {IProjects} from "../../../Types/Types";
 
-
-
-const Projects = ({projectsArray} : IProjects[] | any ) => {
+const Projects = ({projectsArray} : IProjects[] | any) => {
 
     useEffect(() => {
 
@@ -86,7 +84,7 @@ const Projects = ({projectsArray} : IProjects[] | any ) => {
                         mt: '3em'
                     }}>
 
-                        {projectsArray && projectsArray.map((project:any, index:number) => {
+                        {projectsArray && projectsArray.map((project : any, index : number) => {
                             return <ProjectCard
                                 className={`p${index}`}
                                 isReversed={index % 2 === 0
@@ -115,7 +113,8 @@ const Projects = ({projectsArray} : IProjects[] | any ) => {
                             padding: '.5em 3.5em',
                             background: 'transparent',
                             border: '1px solid',
-                            color: '#0092ff'
+                            color: '#0092ff',
+                            ':hover' : {border:'1px solid transparent'}
                         }}>
                             Load More
                         </Button>

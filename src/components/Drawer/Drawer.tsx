@@ -1,6 +1,5 @@
-import {Box, Container, Divider, Drawer, IconButton} from '@mui/material'
+import {Box, Divider, Drawer, IconButton} from '@mui/material'
 import {ICustomDrawer} from '../../Types/Types'
-import CustomLink from '../Mui/CustomLink'
 import CloseIcon from '@mui/icons-material/Close';
 import {Links} from '../Navbar/Navbar';
 import DrawerItem from './DrawerItem';
@@ -30,12 +29,6 @@ const CustomDrawer = ({isOpen, toggleDrawer} : ICustomDrawer) => {
                 margin: '0 auto'
             }}>
 
-                {/* <CustomLink
-                    handleClick={() => toggleDrawer(false)}
-                    fontWeight='600'
-                    text='VITO'
-                    href='/'
-                    color='#0092ff'/> */}
                 <Logo color={color} toggleDrawer={toggleDrawer} colorMode={colorMode} />
 
                 <IconButton

@@ -1,7 +1,7 @@
 import {Box, Button, Container} from "@mui/material"
 import Typography from '@mui/material/Typography';
 import {useRouter} from "next/router";
-import {useEffect, useRef} from "react";
+import {useEffect} from "react";
 import gsap from 'gsap'
 const CTA = () => {
     const router = useRouter()
@@ -34,7 +34,6 @@ const CTA = () => {
         });
 
     }, [])
-
     return (
         <Box
             sx={{
@@ -85,6 +84,7 @@ const CTA = () => {
 
                      
                         <Button
+                            onClick={()=>router.push('/contact')}
                             className='ctabtn'
                             sx={{
                             color: 'white',

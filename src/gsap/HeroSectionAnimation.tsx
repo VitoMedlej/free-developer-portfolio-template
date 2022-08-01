@@ -49,6 +49,7 @@ const HeroSectionAnimation = (q:gsap.utils.SelectorFunc) => {
         opacity: 1,
         duration: '.9'
     });
+
 }
 
 export default HeroSectionAnimation

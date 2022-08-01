@@ -120,7 +120,10 @@ const ProjectCard = ({
                         color='black'
                         variant='h3'
                         sx={{
-                        fontSize: {xs:'.83em',sm:'.9em'},
+                        fontSize: {
+                            xs: '.83em',
+                            sm: '.9em'
+                        },
                         fontWeight: '300'
                     }}>
                         {description}

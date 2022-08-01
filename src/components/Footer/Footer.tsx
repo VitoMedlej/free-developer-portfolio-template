@@ -1,7 +1,8 @@
 import gsap from 'gsap';
-import {Box, Typography, Divider, Grid, Button} from '@mui/material';
+import {Box, Typography, Divider, Grid} from '@mui/material';
 
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 function Copyright() {
     return (
 <>
@@ -36,6 +37,7 @@ const styles = {
 }
 
 function Footer() {
+    const router = useRouter()
     return (
         <Box >
             <Divider/>
@@ -77,11 +79,14 @@ function Footer() {
                         <Box className='link' sx={styles}>
                             <Typography 
                             className='FooterLink'
-                            onClick={()=>gsap.to(window, {duration: 1, scrollTo: `#hero`})}
+                            onClick={()=>{router.push('/'); gsap.to(window, {duration: .8, scrollTo: `#hero`})}}
                             >Home</Typography>
                             <Link href='/contact'>Contact</Link>
                          
-                            <Link href='/about'>About</Link>
+                            <Typography 
+                            className='FooterLink'
+                            onClick={()=>{router.push('/'); gsap.to(window, {duration: .5, scrollTo: `#about`})}}
+                            >About</Typography>
                         </Box>
 
                     </Grid>

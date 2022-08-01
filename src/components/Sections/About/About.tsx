@@ -10,6 +10,7 @@ const About = () => {
     return (
     <>
         <Container
+        id='about'
             maxWidth='lg'
             sx={{
             margin: '0 auto',
