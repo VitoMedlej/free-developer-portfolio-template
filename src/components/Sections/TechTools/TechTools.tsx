@@ -1,5 +1,5 @@
 import {Container, Typography, Grid, Divider} from '@mui/material';
-import {useContext, useMemo, useEffect} from 'react';
+import { useContext, useEffect } from 'react';
 import {ColorModeContext} from '../../../../pages/_app';
 import MainTitleAnimation from '../../../gsap/MainTitleAnimation';
 import {centeredStyles} from '../Perks/Perks';

@@ -65,7 +65,7 @@ function Footer() {
 
                         <Box sx={styles}>
                             <Typography variant='h3' fontSize='1em'>
-                                Hi my name is Vito Medlej and I've built this portfolio website to showcase my work and give clients and employers a way to reach me out and see my work. If you're a developer as well feel free to use this website as your own and good luck on your journey.
+                                Hi my name is Vito Medlej and I&lsquo;ve built this portfolio website to showcase my work and give clients and employers a way to reach me out and see my work. If you&lsquo;re a developer as well feel free to use this website as your own and good luck on your journey.
                             </Typography>
                         </Box>
 

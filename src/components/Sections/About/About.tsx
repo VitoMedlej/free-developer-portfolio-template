@@ -1,10 +1,9 @@
-import { Container, Box, Grid, Divider } from '@mui/material';
+import { Container, Box, Grid } from '@mui/material';
 import Image from 'next/image'
 import Typography from '@mui/material/Typography';
 import ReadMore from '../ReadMore/ReadMore';
 import { ColorModeContext } from '../../../../pages/_app';
 import { useContext } from 'react';
-import Link from 'next/link'
 const About = () => {
     const colorMode = useContext(ColorModeContext)
     return (
@@ -95,7 +94,7 @@ const About = () => {
                                 sm: '1em'
                             }
                         }}>
-                           A 19 years old lebanon-based web developer. About a year and few months ago, I decided I wanted to do something for future me, and after a bit of research I decided web development was the way to go. Ever since I've been coding on a daily basis despite the constant ups and downs, I kept going.
+                           A 19 years old lebanon-based web developer. About a year and few months ago, I decided I wanted to do something for future me, and after a bit of research I decided web development was the way to go. Ever since I&lsquo;ve been coding on a daily basis despite the constant ups and downs, I kept going.
 
                         </Typography>
                     </Box>
@@ -110,16 +109,16 @@ const About = () => {
                             pb:'.5em'
                         }}>
 
-                       I've been working on my english and my soft skills and other important aspects in life such as having a wide networking circle so if that's something you're intrested in growing hit me up and let's double the opportunities. 
+                       I&lsquo;ve been working on my english and my soft skills and other important aspects in life such as having a wide networking circle so if that&lsquo;s something you&lsquo;re intrested in growing hit me up and let&lsquo;s double the opportunities. 
                         </Typography>
                     <ReadMore>
-                    Aside from the working hard, I tend to enjoy simple things like reading, petting cats, hitting the gym and other things we humans do. If any of what I said seems convincing enough then please don't hesitate to send me a message
+                    Aside from the working hard, I tend to enjoy simple things like reading, petting cats, hitting the gym and other things we humans do. If any of what I said seems convincing enough then please don&lsquo;t hesitate to send me a message
                     </ReadMore>
                 </Grid>
             </Grid>
 
         </Container>
-    {/* <Divider/> */}
+
         </>
     
     )

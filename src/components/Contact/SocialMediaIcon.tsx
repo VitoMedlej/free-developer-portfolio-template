@@ -1,5 +1,4 @@
 import { Box, Typography } from "@mui/material"
-import { title } from "process"
 import { centeredStyles } from "../Sections/Perks/Perks"
 import Image from 'next/image'
 import { ISocialMedia } from "../../Types/Types"

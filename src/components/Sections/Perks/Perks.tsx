@@ -63,7 +63,7 @@ const Perks = () => {
                 }
             }}
                 fontWeight='600'>
-                You're Safe And in Good Hands
+                You&lsquo;re Safe And in Good Hands
             </Typography>
             <Typography
                 variant='h2'

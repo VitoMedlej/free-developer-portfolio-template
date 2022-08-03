@@ -1,6 +1,5 @@
 import type {AppProps}
 from 'next/app'
-import Layout from '../Layout/Layout'
 import '../styles/styles.css'
 import {ThemeProvider} from '@emotion/react'
 import {createTheme} from "@mui/material"

@@ -1,4 +1,4 @@
-import {Box, Divider, Drawer, IconButton, Tooltip} from '@mui/material'
+import { Box, Divider, Drawer, IconButton } from '@mui/material';
 import {ICustomDrawer} from '../../Types/Types'
 import CloseIcon from '@mui/icons-material/Close';
 import {Links} from '../Navbar/Navbar';
