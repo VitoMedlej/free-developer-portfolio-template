@@ -18,7 +18,7 @@ const Projects = ({projectsArray} : IProjects[] | any) => {
     useEffect(() => {
 
         MainTitleAnimation('.title3', '.title4')
-
+        if (!projectsArray) return;
         setTimeout(() => {
 
             for (let i = 0; i < projectsArray.length; i++) {
@@ -61,7 +61,7 @@ const Projects = ({projectsArray} : IProjects[] | any) => {
                             }
                         }}
                             fontWeight='600'>
-                            Successful projects im proud of
+                            Successful Projects im Proud Of 
                         </Typography>
                         <Typography
                             className='title4 t25o0'
@@ -74,7 +74,7 @@ const Projects = ({projectsArray} : IProjects[] | any) => {
                                 sm: '1em'
                             }
                         }}>
-                            Here are some of my projects that I&apos;ve built.
+                            No better way to get experience than real-life projects
                         </Typography>
 
                     </Grid>
@@ -84,7 +84,7 @@ const Projects = ({projectsArray} : IProjects[] | any) => {
                         mt: '3em'
                     }}>
 
-                        {projectsArray && projectsArray.map((project : any, index : number) => {
+                        {projectsArray ? projectsArray.map((project : any, index : number) => {
                             return <ProjectCard
                                 className={`p${index}`}
                                 isReversed={index % 2 === 0
@@ -96,7 +96,11 @@ const Projects = ({projectsArray} : IProjects[] | any) => {
                                 img={project.img}
                                 description={project.description}
                                 key={project.title}/>
-                        })}
+                        })
+                    
+                    :
+                    <Typography variant='h1' fontSize='1em' fontWeight='500' color='red'>There was an error loading the projects.</Typography>
+                    }
 
                     </Box>
                     <Box

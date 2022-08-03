@@ -56,7 +56,8 @@ const Hero = () => {
                             pt: '1em',
                             fontWeight: '600'
                         }}>
-                            Better, Faster and Cheaper Websites.
+                          {/* Where creative websites are made */}
+                        The place where your business exapnds
                         </Typography>
                         <Typography
                             variant='h2'
@@ -71,8 +72,7 @@ const Hero = () => {
                             maxWidth: '570px',
                             fontWeight: '300'
                         }}>
-                            Whether it&apos;s a mobile application or web application, we are a team of
-                            high-performing app developers Lebanese that turn your idea into reality.
+                           Hey there! Call me Vito Medlej. I enjoy creating kickass websites and web apps, ones that suit your desires and needs using latest technologies and cleanest design patterns. 
                         </Typography>
 
                         <Box

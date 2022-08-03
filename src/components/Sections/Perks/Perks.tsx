@@ -15,7 +15,19 @@ export const centeredStyles = {
 }
 
 gsap.registerPlugin(ScrollTrigger);
+
+
+const perksArray = [{
+    title:'1 Years support',
+    Icon:null,
+    text:'',
+},
+
+
+]
 const Perks = () => {
+
+    
 
     useEffect(() => {
         MainTitleAnimation('.h1','.h2')
@@ -40,7 +52,7 @@ const Perks = () => {
                 }
             }}
                 fontWeight='600'>
-                Build up the whole picture
+                You're Safe And in Good Hands
             </Typography>
             <Typography
                 variant='h2'
@@ -55,9 +67,7 @@ const Perks = () => {
                     sm: '1em'
                 }
             }}>
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                deserunt mollit anim id est laborum — semper quis lectus nulla at volutpat diam
-                ut venenatis.
+                Customer satisfaction comes first, and in order to do that I decided to pickup skills and principles to provide quality service.
             </Typography>
 
             <Box
@@ -72,7 +82,7 @@ const Perks = () => {
                 }
             }}>
                 {[1, 2, 3].map(n => {
-                    return <PerkCard key={n}/>
+                    return <PerkCard  key={n}/>
                 })}
             </Box>
         </Box>

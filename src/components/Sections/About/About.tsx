@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 import ReadMore from '../ReadMore/ReadMore';
 import { ColorModeContext } from '../../../../pages/_app';
 import { useContext } from 'react';
-
+import Link from 'next/link'
 const About = () => {
     const colorMode = useContext(ColorModeContext)
     return (
@@ -84,7 +84,7 @@ const About = () => {
                             }
                         }}
                             fontWeight='600'>
-                            Hello My non boring friend
+                            About Me, Im Vito Medlej
                         </Typography>
                         <Typography
                             variant='h2'
@@ -95,21 +95,25 @@ const About = () => {
                                 sm: '1em'
                             }
                         }}>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur corporis
-                            consequatur, placeat praesentium odit expedita, tenetur velit eos magni
-                            obcaecati dignissimos exercitationem hic ullam dicta, maiores veniam temporibus.
-                            Provident dolor quos ad quidem. Aspernatur omnis eum molestiae odit deserunt
-                            porro placeat. Ex molestiae odit ullam ipsa necessitatibus fugit quasi non.
+                           A 19 years old lebanon-based web developer. About a year and few months ago, I decided I wanted to do something for future me, and after a bit of research I decided web development was the way to go. Ever since I've been coding on a daily basis despite the constant ups and downs, I kept going.
 
                         </Typography>
                     </Box>
-                    <ReadMore>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur corporis
-                        consequatur, placeat praesentium odit expedita, tenetur velit eos magni
-                        obcaecati dignissimos exercitationem hic ullam dicta, maiores veniam temporibus.
-                        Provident dolor quos ad quidem. Aspernatur omnis eum molestiae odit deserunt
-                        porro placeat. Ex molestiae odit ullam ipsa necessitatibus fugit quasi non.
+                    <Typography
+                            variant='h2'
+                            sx={{
+                            maxWidth: '570px',
+                            fontSize: {
+                                xs: '.8em',
+                                sm: '1em'
+                            },
+                            pb:'.5em'
+                        }}>
 
+                       I've been working on my english and my soft skills and other important aspects in life such as having a wide networking circle so if that's something you're intrested in growing hit me up and let's double the opportunities. 
+                        </Typography>
+                    <ReadMore>
+                    Aside from the working hard, I tend to enjoy simple things like reading, petting cats, hitting the gym and other things we humans do. If any of what I said seems convincing enough then please don't hesitate to send me a message
                     </ReadMore>
                 </Grid>
             </Grid>

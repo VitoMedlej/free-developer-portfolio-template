@@ -20,7 +20,7 @@ const ReadMore = ({children} : any) => {
         }}>
 
             {isReadMore
-                ? text.slice(0, 180)
+                ? text.slice(0, 90)
                 : text}
             <span
                 style={{

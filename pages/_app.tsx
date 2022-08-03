@@ -35,9 +35,9 @@ function MyApp({Component, pageProps} : AppProps) {
         }}>
             <CssBaseline/>
 
-            <Layout title='Vito Medlej personal portfolio website'>
+  
                 <Component {...pageProps}/>
-            </Layout>
+           
         </ThemeProvider>
     </ColorModeContext.Provider>
 }

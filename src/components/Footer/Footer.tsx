@@ -65,10 +65,7 @@ function Footer() {
 
                         <Box sx={styles}>
                             <Typography variant='h3' fontSize='1em'>
-                                This application is no more than a personal project used to improve my web
-                                development using new tools i&apos;ve decided to pick up and learn. All data
-                                used was taken from various sources from different lebanese websites, and I
-                                claim nothing to be mine whatsoever.
+                                Hi my name is Vito Medlej and I've built this portfolio website to showcase my work and give clients and employers a way to reach me out and see my work. If you're a developer as well feel free to use this website as your own and good luck on your journey.
                             </Typography>
                         </Box>
 

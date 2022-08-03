@@ -7,8 +7,8 @@ import ToolCard from './ToolCard';
 import gsap from 'gsap';
 
 const TechTools = ({iconsArray} : any) => {
-    let FrontendTools = iconsArray.filter((icon : any) => !icon.isBackend)
-    let OtherTools = iconsArray.filter((icon : any) => icon.isBackend)
+    let FrontendTools = iconsArray && iconsArray.filter((icon : any) => !icon.isBackend)
+    let OtherTools = iconsArray && iconsArray.filter((icon : any) => icon.isBackend)
 
     const colorMode = useContext(ColorModeContext)
     // turn off "filter" mode when the theme is set to dark mode
@@ -53,7 +53,7 @@ const TechTools = ({iconsArray} : any) => {
                     }
                 }}
                     fontWeight='600'>
-                    Build up the whole picture
+                    Tools Of The Present And Future 
                 </Typography>
                 <Typography
                     variant='h2'
@@ -66,7 +66,7 @@ const TechTools = ({iconsArray} : any) => {
                         sm: '1em'
                     }
                 }}>
-                    Frontend technologies and tools
+                    Frontend technologies I prefer using
                 </Typography>
 
             </Grid>
@@ -83,7 +83,7 @@ const TechTools = ({iconsArray} : any) => {
                 xs={12}
                 item>
 
-                {FrontendTools.map((item : any) => {
+                {FrontendTools && FrontendTools.map((item : any) => {
                     return <ToolCard
                         className='toolCard1'
                         filter={isfilterMode(item)}
@@ -94,6 +94,9 @@ const TechTools = ({iconsArray} : any) => {
 
             </Grid>
 
+           {OtherTools ? 
+            <>
+           
             <Grid item sx={centeredStyles}>
 
                 <Typography
@@ -131,9 +134,17 @@ const TechTools = ({iconsArray} : any) => {
                         svg={tool.svg}
                         title={tool.title}
                         key={tool.title}/>
-                })}
+                })
+           
+
+            }
 
             </Grid>
+            
+           </>
+            : 
+            <Typography sx={{margin:'0 auto',fontSize:'1em', fontWeight:'500', color:'red'}} variant='h1' >There was an error loading the items.</Typography>
+            }
 
         </Grid>
 
