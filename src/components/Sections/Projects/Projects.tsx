@@ -4,6 +4,7 @@ import {
     Container,
     Divider,
     Grid,
+    Tooltip,
     Typography
 } from "@mui/material"
 import {centeredStyles} from "../Perks/Perks"
@@ -18,7 +19,8 @@ const Projects = ({projectsArray} : IProjects[] | any) => {
     useEffect(() => {
 
         MainTitleAnimation('.title3', '.title4')
-        if (!projectsArray) return;
+        if (!projectsArray) 
+            return;
         setTimeout(() => {
 
             for (let i = 0; i < projectsArray.length; i++) {
@@ -61,7 +63,7 @@ const Projects = ({projectsArray} : IProjects[] | any) => {
                             }
                         }}
                             fontWeight='600'>
-                            Successful Projects im Proud Of 
+                            Successful Projects im Proud Of
                         </Typography>
                         <Typography
                             className='title4 t25o0'
@@ -84,23 +86,23 @@ const Projects = ({projectsArray} : IProjects[] | any) => {
                         mt: '3em'
                     }}>
 
-                        {projectsArray ? projectsArray.map((project : any, index : number) => {
-                            return <ProjectCard
-                                className={`p${index}`}
-                                isReversed={index % 2 === 0
-                                ? true
-                                : false}
-                                siteUrl={project.siteUrl}
-                                repoUrl={project.repoUrl}
-                                title={project.title}
-                                img={project.img}
-                                description={project.description}
-                                key={project.title}/>
-                        })
-                    
-                    :
-                    <Typography variant='h1' fontSize='1em' fontWeight='500' color='red'>There was an error loading the projects.</Typography>
-                    }
+                        {projectsArray
+                            ? projectsArray.map((project : any, index : number) => {
+                                return <ProjectCard
+                                    className={`p${index}`}
+                                    isReversed={index % 2 === 0
+                                    ? true
+                                    : false}
+                                    siteUrl={project.siteUrl}
+                                    repoUrl={project.repoUrl}
+                                    title={project.title}
+                                    img={project.img}
+                                    description={project.description}
+                                    key={project.title}/>
+                            })
+
+                            : <Typography variant='h1' fontSize='1em' fontWeight='500' color='red'>There was an error loading the projects.</Typography>
+}
 
                     </Box>
                     <Box
@@ -108,20 +110,25 @@ const Projects = ({projectsArray} : IProjects[] | any) => {
                         margin: '0 auto',
                         mt: '3em'
                     }}>
+                        <Tooltip title='More Projects Soon'>
 
-                        <Button
-                            className='loadMore'
-                            variant='contained'
-                            sx={{
-                            opacity: 0,
-                            padding: '.5em 3.5em',
-                            background: 'transparent',
-                            border: '1px solid',
-                            color: '#0092ff',
-                            ':hover' : {border:'1px solid transparent'}
-                        }}>
-                            Load More
-                        </Button>
+                            <Button
+                                className='loadMore'
+                                variant='contained'
+                                sx={{
+                                opacity: 0,
+                                padding: '.5em 3.5em',
+                                background: 'transparent',
+                                border: '1px solid',
+                                color: '#0092ff',
+                                ':hover': {
+                                    border: '1px solid transparent'
+                                }
+                            }}>
+                                Load More
+                            </Button>
+                        </Tooltip>
+
                     </Box>
                 </Grid>
 

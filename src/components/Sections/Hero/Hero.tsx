@@ -1,4 +1,4 @@
-import {Box, Button, Container, Grid, Typography} from '@mui/material';
+import {Box, Button, Container, Grid, Tooltip, Typography} from '@mui/material';
 import gsap from 'gsap';
 import {useRef, useEffect} from 'react';
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
@@ -89,6 +89,7 @@ const Hero = () => {
                                 sx={{
                                 opacity: 0,
                                 borderRadius:0,
+                                padding : '.75em 2.5em',
                                 flex:{xs:1,sm:'inherit'},
                             }}
                                 onClick={() => gsap.to(window, {
@@ -97,6 +98,8 @@ const Hero = () => {
                             })}>
                                 View Projects
                             </Button>
+                            <Tooltip title='Not Done Yet :('>
+
                             <Button
                                 className='b2'
                                 sx={{
@@ -110,10 +113,12 @@ const Hero = () => {
                                 }
                             }}
                                 variant='text'>
+
                                 <Typography fontSize='14px'>
                                     DOWNLOAD CV
                                 </Typography>
                             </Button>
+                            </Tooltip>
                         </Box>
                     </Box>
                 </Grid>
