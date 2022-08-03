@@ -3,14 +3,13 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import {useContext} from 'react';
-import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import HomeIcon from '@mui/icons-material/Home';
-import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
-import AccountTreeIcon from '@mui/icons-material/AccountTree';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
 import {INavbar} from '../../Types/Types';
 import {ColorModeContext} from '../../../pages/_app';
 import Logo from '../Logo/Logo';
-
+import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
+import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
 export const Links = [
     {
         text: 'Home',
@@ -18,15 +17,15 @@ export const Links = [
         url: '/'
     }, {
         text: 'Contact',
-        Icon: AlternateEmailIcon,
+        Icon: ConnectWithoutContactIcon,
         url: '/contact'
     }, {
         text: 'Projects',
-        Icon: AccountTreeIcon,
+        Icon: AssignmentTurnedInIcon,
         url: '/'
     }, {
         text: 'Theme',
-        Icon: WbSunnyIcon,
+        Icon: DarkModeIcon,
         url: '/',
         isToggleTheme: true
     }

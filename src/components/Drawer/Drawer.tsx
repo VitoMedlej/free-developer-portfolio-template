@@ -1,4 +1,4 @@
-import {Box, Divider, Drawer, IconButton} from '@mui/material'
+import {Box, Divider, Drawer, IconButton, Tooltip} from '@mui/material'
 import {ICustomDrawer} from '../../Types/Types'
 import CloseIcon from '@mui/icons-material/Close';
 import {Links} from '../Navbar/Navbar';
@@ -8,6 +8,7 @@ import gsap from 'gsap'
 import {ColorModeContext} from '../../../pages/_app';
 import {useContext} from 'react';
 import Logo from '../Logo/Logo';
+
 
 const CustomDrawer = ({isOpen, toggleDrawer} : ICustomDrawer) => {
     gsap.registerPlugin(ScrollToPlugin);
@@ -29,7 +30,7 @@ const CustomDrawer = ({isOpen, toggleDrawer} : ICustomDrawer) => {
                 margin: '0 auto'
             }}>
 
-                <Logo color={color} toggleDrawer={toggleDrawer} colorMode={colorMode} />
+                <Logo color={color} toggleDrawer={toggleDrawer} colorMode={colorMode}/>
 
                 <IconButton
                     onClick={() => toggleDrawer(false)}
@@ -67,6 +68,7 @@ const CustomDrawer = ({isOpen, toggleDrawer} : ICustomDrawer) => {
                         Icon={link.Icon}
                         text={link.text}/>
                 })}
+
             </Box>
         </Drawer>
 

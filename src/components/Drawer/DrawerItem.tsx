@@ -28,11 +28,11 @@ const DrawerItem = ({text, Icon, url, toggleDrawer, isToggleTheme} : IDrawerItem
          
 
         }}>
-            <ListItemButton sx={{   py:'.75em',}}>
+            <ListItemButton sx={{   py:'.75em'}}>
                 <ListItemIcon>
                     <Icon/>
                 </ListItemIcon>
-                <Typography variant='h1' fontSize='.95em' fontWeight='400'>
+                <Typography variant='h1' fontSize='.95em' fontWeight='500'>
                     {text}
                 </Typography>
             </ListItemButton>

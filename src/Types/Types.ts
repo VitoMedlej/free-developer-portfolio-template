@@ -32,9 +32,13 @@ export interface ICustomDrawer extends INavbar {
 }
 export interface IToolCard {
     title : string;
-    svg : any;
-    className : string;
+    svg : string;
+    className ?: string;
     filter?: boolean
+}
+export interface ISocialMedia extends IToolCard {
+    color : string;
+    href : string;
 }
 export interface IDrawerItem {
     text : string;

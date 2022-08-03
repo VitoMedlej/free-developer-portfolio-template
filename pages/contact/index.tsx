@@ -6,6 +6,7 @@ import {Divider} from '@mui/material';
 import Input from '../../src/components/Mui/Input';
 import ContactBox from '../../src/components/Contact/ContactBox';
 import Layout from '../../Layout/Layout';
+import SocialMedia from '../../src/components/Contact/SocialMedia';
 
 const index = () => {
     const ref = useRef();
@@ -13,9 +14,10 @@ const index = () => {
         .utils
         .selector(ref);
     useEffect(() => {
-        gsap.to('.st', {
+        gsap.to('.gradientBg2', {
             opacity: 1,
-            duration: '.7'
+            duration: '.7',
+            delay:'.75'
         })
         HeroSectionAnimation(q)
 
@@ -40,7 +42,7 @@ const index = () => {
                     position: 'relative'
                 }}>
                     <Box
-                        className='gradientBg st'
+                        
                         sx={{
                         width: '150px',
                         height: '150px',
@@ -60,7 +62,7 @@ const index = () => {
                         backgroundSize: '15px 13px'
                     }}></Box>
                     <Box
-                        className='gradientBg'
+                        className='gradientBg2'
                         sx={{
                         width: '90px',
                         height: '90px',
@@ -164,7 +166,7 @@ const index = () => {
                             </Button>
 
                         </Box>
-                        <Divider></Divider>
+                        <Divider/>
                         <Box sx={{
                             my: '3em'
                         }}>
@@ -173,8 +175,10 @@ const index = () => {
                             <ContactBox t1='Location' t2='Currently living in' t3='Lebanon/Beirut'/>
                             <ContactBox t1='Contact Directly ' t2='Phone Number' t3='+961/ 81826445'/>
                         </Box>
-
                     </Box>
+                        <SocialMedia/>
+                    
+
 
                 </Container>
             </Box>

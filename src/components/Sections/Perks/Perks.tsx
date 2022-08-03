@@ -4,6 +4,9 @@ import {useEffect} from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import MainTitleAnimation from '../../../gsap/MainTitleAnimation';
+import HandymanIcon from '@mui/icons-material/Handyman';
+import HttpIcon from '@mui/icons-material/Http';
+import DevicesIcon from '@mui/icons-material/Devices';
 
 export const centeredStyles = {
     alignItems: 'center',
@@ -18,12 +21,20 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 const perksArray = [{
-    title:'1 Years support',
-    Icon:null,
-    text:'',
+    title:'Continuous support',
+    Icon:HandymanIcon,
+    text:'I will advance your web-based software to keep it efficient, competitive on the market. Using a well-established DevOps processes, It helps me roll out urgent updates within few hours and release new, planned functional modules every other week.',
 },
-
-
+{
+    title : 'Back-end development',
+    text : 'I accurately implement the business logic of your web app on the back end. I always rely on proven frameworks to ensure fast and quality coding. And I build well structured APIs to integrate your web app with corporate or third-party systems and services',
+    Icon :  HttpIcon,
+}   ,
+{
+    title : 'Frontend design/dev',
+    Icon : DevicesIcon,
+    text : 'As a web expert I tend to closely analyze the user audience to understand their needs and reflect these findings in UI design. Having agreed on the look and feel of a web app with project stakeholders, I push to bring it to life with smart front-end technologies.'
+}
 ]
 const Perks = () => {
 
@@ -81,8 +92,8 @@ const Perks = () => {
                     sm: 'space-between'
                 }
             }}>
-                {[1, 2, 3].map(n => {
-                    return <PerkCard  key={n}/>
+                {perksArray.map(perk => {
+                    return <PerkCard  key={perk.title} title={perk.title} text={perk.text} Icon={perk.Icon}/>
                 })}
             </Box>
         </Box>

@@ -1,9 +1,9 @@
 import {Box, Typography, IconButton} from '@mui/material';
-import AddTaskIcon from '@mui/icons-material/AddTask';
+
 import gsap from 'gsap'
 import {useEffect} from 'react';
 
-const PerkCard = () => {
+const PerkCard = ({text,title,Icon} : any) => {
     useEffect(() => {
 
    
@@ -32,7 +32,7 @@ const PerkCard = () => {
             },
             my: '2em'
         }}>
-            <AddTaskIcon
+        {Icon &&    <Icon
             className='cardIcon'
                 sx={{
               
@@ -42,7 +42,7 @@ const PerkCard = () => {
                 padding: '.55em',
                 borderRadius: '50%'
             }}
-                fontSize='medium'/>
+                fontSize='medium'/>}
             <Typography
                 variant='h2'
                 sx={{
@@ -50,8 +50,8 @@ const PerkCard = () => {
              
             }}
                 fontWeight='400'
-                fontSize='1.4em'>
-                Hello world
+                fontSize='1.5em'>
+              {title}
             </Typography>
             <Typography
                 variant='h3'
@@ -59,10 +59,9 @@ const PerkCard = () => {
                 pt: '1em'
             }}
                 fontWeight='300'
-                fontSize='.9em'
+                fontSize='.8em'
                 className='secondary'>
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur. Excepteur sint occaecat cupidatat.
+                {text}
             </Typography>
 
         </Box>
