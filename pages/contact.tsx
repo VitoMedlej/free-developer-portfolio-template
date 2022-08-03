@@ -1,14 +1,14 @@
 import {Box, Typography, Container, Button} from '@mui/material';
 import {useRef, useEffect} from 'react';
-import HeroSectionAnimation from '../../src/gsap/HeroSectionAnimation';
+import HeroSectionAnimation from '../src/gsap/HeroSectionAnimation';
 import gsap from 'gsap'
 import {Divider} from '@mui/material';
-import Input from '../../src/components/Mui/Input';
-import ContactBox from '../../src/components/Contact/ContactBox';
-import Layout from '../../Layout/Layout';
-import SocialMedia from '../../src/components/Contact/SocialMedia';
+import Input from '../src/components/Mui/Input';
+import ContactBox from '../src/components/Contact/ContactBox';
+import Layout from '../Layout/Layout';
+import SocialMedia from '../src/components/Contact/SocialMedia';
 
-const index = () => {
+const Contact = () => {
     const ref = useRef();
     const q = gsap
         .utils
@@ -187,4 +187,4 @@ const index = () => {
     )
 }
 
-export default index
+export default Contact
