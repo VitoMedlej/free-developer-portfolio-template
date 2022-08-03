@@ -11,6 +11,7 @@ export interface ICustomLink {
 export interface ILayout {
     title : string;
     children : any
+    desc ?: string
 }
 export interface INavbar {
     toggleDrawer : (state?: boolean) => void

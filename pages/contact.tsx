@@ -17,14 +17,16 @@ const Contact = () => {
         gsap.to('.gradientBg2', {
             opacity: 1,
             duration: '.7',
-            delay:'.75'
+            delay: '.75'
         })
         HeroSectionAnimation(q)
 
     }, [])
 
     return (
-        <Layout title='Vito Medlej contact page'>
+        <Layout
+            title='Vito Medlej contact page'
+            desc='If you have questions or need help you can contact me at vito.medlej@gmail.com | Or Send a Message through the form.'>
 
             <Box sx={{
                 overflowX: 'hidden'
@@ -42,7 +44,6 @@ const Contact = () => {
                     position: 'relative'
                 }}>
                     <Box
-                        
                         sx={{
                         width: '150px',
                         height: '150px',
@@ -176,9 +177,7 @@ const Contact = () => {
                             <ContactBox t1='Contact Directly ' t2='Phone Number' t3='+961/ 81826445'/>
                         </Box>
                     </Box>
-                        <SocialMedia/>
-                    
-
+                    <SocialMedia/>
 
                 </Container>
             </Box>

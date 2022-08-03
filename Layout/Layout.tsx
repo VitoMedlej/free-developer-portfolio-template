@@ -8,7 +8,7 @@ import Footer from "../src/components/Footer/Footer";
 
 
 
-const Layout = ({ title ,children } : ILayout) => {
+const Layout = ({ title ,children ,desc } : ILayout) => {
   const [isOpen,setOpen] = useState(false)
     const toggleDrawer = (state?:boolean) => {
       setOpen(state !== undefined ? state : !isOpen)
@@ -24,6 +24,30 @@ const Layout = ({ title ,children } : ILayout) => {
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link href={`https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700&display=swap`} rel="stylesheet" />
+   
+    
+<meta name="description" content={`${desc || 'Vito Medlej personal portfolio website, A Lebanese web developer an expert in UI/UX and building complex web applications.'}`} />
+
+
+<meta property="og:title" content="Vito Medlej Personal Portfolio | Web Developer To Hire" />
+
+
+<meta property="og:url" content="https://elvito.netlify.app" />
+
+
+<meta property="og:description" content="Vito Medlej is a Web Developer based in Lebanon. And this is my personal Portfolio. "/>
+
+
+<meta property="og:image" content="https://res.cloudinary.com/dwcu3wcol/image/upload/v1658929513/log-removebg-preview_fygpsd.png"/>
+
+{/* <!-- Og Type -->
+<meta property="og:type" content="article" /> */}
+   
+   
+   
+   
+   
+   
     </Head>
     <Navbar toggleDrawer={toggleDrawer}/>
     <CustomDrawer isOpen={isOpen} toggleDrawer={toggleDrawer}/>
