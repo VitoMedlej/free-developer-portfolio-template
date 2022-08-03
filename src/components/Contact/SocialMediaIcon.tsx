@@ -18,7 +18,7 @@ const SocialMediaIcon = ({title, svg, href, filter} : ISocialMedia) => {
             margin: '0 auto',
             
         }}>
-            <a target="_blank" href={href}>
+            <a target="_blank" rel="noreferrer" href={href}>
 
                 <Box
                     sx={{
