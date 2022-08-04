@@ -98,7 +98,7 @@ const Hero = () => {
                             })}>
                                 View Projects
                             </Button>
-                            <Tooltip title='Not Done Yet :('>
+                        <a href='https://drive.google.com/file/d/1nW8eGHYyyJMAeIb1VyERxSPmw25ox6wB/view' rel="noreferrer" target='_blank' >
 
                             <Button
                                 className='b2'
@@ -113,12 +113,13 @@ const Hero = () => {
                                 }
                             }}
                                 variant='text'>
-
+                                
                                 <Typography fontSize='14px'>
-                                    DOWNLOAD CV
+                                    View Resume
                                 </Typography>
                             </Button>
-                            </Tooltip>
+                            </a>
+
                         </Box>
                     </Box>
                 </Grid>
@@ -217,10 +218,12 @@ const Hero = () => {
                                 <Typography
                                     sx={{
                                     fontWeight: '300',
-                                    fontSize: '1em',
+                                    fontSize: '.85em',
                                     padding: '1em'
                                 }}>
-                                    Whether it&apos;s a mobile application or web application, we are a team.
+{`"Many ideas grow better when transplanted into another mind than the one where they sprang up."
+
+– Oliver Wendell Holmes`}
                                 </Typography>
 
                             </Box>
