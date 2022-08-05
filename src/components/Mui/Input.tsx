@@ -3,12 +3,13 @@ import {useContext} from "react"
 import {ColorModeContext} from "../../../pages/_app"
 import { IInput } from "../../Types/Types"
 
-const Input = ({multi, mt, label, type} : IInput) => {
+const Input = ({multi, mt, label,name, type} : IInput) => {
     const colorMode = useContext(ColorModeContext)
     const color = colorMode.mode === 'light'
         ? 'black'
         : 'white'
     return (<TextField
+    name={name}
         type={type || 'text'}
         multiline={multi
         ? multi

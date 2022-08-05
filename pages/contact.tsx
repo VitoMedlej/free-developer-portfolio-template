@@ -1,5 +1,12 @@
-import {Box, Typography, Container, Button} from '@mui/material';
-import {useRef, useEffect} from 'react';
+import {
+    Box,
+    Typography,
+    Container,
+    Button,
+    FormControl,
+    TextField
+} from '@mui/material';
+import {useRef, useEffect, useState, useContext} from 'react';
 import HeroSectionAnimation from '../src/gsap/HeroSectionAnimation';
 import gsap from 'gsap'
 import {Divider} from '@mui/material';
@@ -7,9 +14,24 @@ import Input from '../src/components/Mui/Input';
 import ContactBox from '../src/components/Contact/ContactBox';
 import Layout from '../Layout/Layout';
 import SocialMedia from '../src/components/Contact/SocialMedia';
+import emailjs from '@emailjs/browser';
+import {ColorModeContext} from './_app';
 
 const Contact = () => {
+    const colorMode = useContext(ColorModeContext)
+
     const ref = useRef();
+    const form = useRef();
+    const [status,
+        setStatus] = useState(0)
+    const [email,
+        setEmail] = useState('')
+        const color = status === 200
+        ? 'green'
+        : 'red';
+        const inputColor = colorMode.mode === 'light'
+        ? 'black'
+        : 'white';
     const q = gsap
         .utils
         .selector(ref);
@@ -22,6 +44,28 @@ const Contact = () => {
         HeroSectionAnimation(q)
 
     }, [])
+
+ 
+ 
+
+
+
+    const sendEmail = async(e : any) => {
+
+        e.preventDefault();
+
+        if (!form.current) 
+            return;
+        let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if (!email.match(regexEmail)) {
+            setStatus(400)
+            return;
+        }
+
+        const req = await emailjs.sendForm(`service_fvka279`, 'template_veigfx8', form.current, 'lbTdA9-5crCdl733u')
+        const res = await req
+        setStatus(res ? res.status : 400)
+    };
 
     return (
         <Layout
@@ -129,23 +173,55 @@ const Contact = () => {
                     }}>
 
                         <Box
+                            ref={form}
+                            onSubmit={sendEmail}
+                            component='form'
                             sx={{
                             mt: '6em',
                             justifyContent: 'space-between'
                         }}>
+                            <Typography
+                                sx={{
+                                textAlign: 'center',
+                                pb: '1em',
+                                color
+                            }}>
+
+                                {status === 200
+                                    ? 'Message sent. Expect a reply soon!'
+                                    : ''}
+                                {status > 200 && 'There was an error, make sure to fill all the inputs and try again.'}
+                            </Typography>
                             <Box
                                 sx={{
                                 display: 'flex',
                                 gap: '1em'
                             }}>
-                                <Input label='Name'/>
-                                <Input type='number' label='Phone'/>
+                                <Input name="user_name" label='Name'/>
+                                <Input name="user_phone" type='number' label='Phone'/>
                             </Box>
-                            <Input type='email' label='Email' mt='1em'/>
+                            {/* <Input name="user_email" type='email' label='Email' mt='1em'/> */}
 
-                            <Input label='Subject' mt='1em' multi={true}/>
+                            <TextField
+                                name={'user_email'}
+                                type={'email'}
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                sx={{
+                                color: inputColor || 'black',
+                                input: {
+                                    color: inputColor || 'black'
+                                },
+                                width: '100%',
+                                mt: '1em'
+                            }}
+                                label={'Email'}
+                                variant="outlined"/>
+
+                            <Input name="message" label='Subject' mt='1em' multi={true}/>
 
                             <Button
+                                type='submit'
                                 className='loadMore'
                                 variant='contained'
                                 sx={{
@@ -167,6 +243,7 @@ const Contact = () => {
                             </Button>
 
                         </Box>
+
                         <Divider/>
                         <Box sx={{
                             my: '3em'

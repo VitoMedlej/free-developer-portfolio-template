@@ -19,6 +19,7 @@ export interface INavbar {
 export interface IInput {
     multi?: boolean;
     mt?: string;
+    name : string;
     label : string
     type?: string;
 }
