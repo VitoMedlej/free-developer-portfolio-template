@@ -56,7 +56,7 @@ const Hero = () => {
                             pt: '1em',
                             fontWeight: '600'
                         }}>
-                          {/* Where creative websites are made */}
+                      
                         The place where your business exapnds
                         </Typography>
                         <Typography
@@ -178,7 +178,7 @@ const Hero = () => {
                                 zIndex: '2'
                             }}
                                 className='img1'
-                                src={`https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=699&q=80`}
+                                src={`42aekdJSFWXCwxRKNEY3ye2AkV3YHuAfGdjF6wUS7dV2NU2p26gZWCYGruYrp1HKxMDt8ZwnqxPBrGJG44jm6XnMEdtH15K`}
                                 alt=""/>
                             <Box
                                 className='gradientBg'
