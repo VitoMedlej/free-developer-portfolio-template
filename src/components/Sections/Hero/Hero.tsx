@@ -98,7 +98,7 @@ const Hero = () => {
                             })}>
                                 View Projects
                             </Button>
-                        <a href='https://drive.google.com/file/d/1nW8eGHYyyJMAeIb1VyERxSPmw25ox6wB/view' rel="noreferrer" target='_blank' >
+                        <a href='https://drive.google.com/file/d/1oPs5kfUhAbxKomyDWFmtn2Nhm5ehyBjz/view?usp=sharing' rel="noreferrer" target='_blank' >
 
                             <Button
                                 className='b2'
@@ -169,7 +169,7 @@ const Hero = () => {
 
                             <Image
 
-                            priority
+                            
                             layout='fill'
 
                                 style={{
@@ -178,7 +178,7 @@ const Hero = () => {
                                 zIndex: '2'
                             }}
                                 className='img1'
-                                src={`42aekdJSFWXCwxRKNEY3ye2AkV3YHuAfGdjF6wUS7dV2NU2p26gZWCYGruYrp1HKxMDt8ZwnqxPBrGJG44jm6XnMEdtH15K`}
+                                src={`https://res.cloudinary.com/dwcu3wcol/image/upload/v1659775761/297320475_725718358722605_8872437478418476290_n_luki7p.jpg`}
                                 alt=""/>
                             <Box
                                 className='gradientBg'
