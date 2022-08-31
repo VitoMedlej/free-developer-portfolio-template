@@ -61,7 +61,7 @@ const About = () => {
                             alt='Personal Image'
                             className='img1 '
                             layout='fill'
-                            src={`https://res.cloudinary.com/dwcu3wcol/image/upload/v1658039917/ane.3273a2f2-removebg-preview_utwnf0.png`}/>
+                            src={`https://res.cloudinary.com/dwcu3wcol/image/upload/v1659776757/20211226_154523_-_Copy_hhy2kp.jpg`}/>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={12} md={7.5} lg={7}>
