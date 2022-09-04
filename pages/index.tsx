@@ -21,7 +21,7 @@ const Home : NextPage = ({projectsArray, iconsArray} : any) => {
 
     }, [])
     return (
-        <Layout title='Vito Medlej personal portfolio website'>
+        <Layout desc={`Hire Vito Medlej, A lebanese professional software engineer in beirut, Can develop all kinds of websites and web applications according to your needs`} title='Vito Medlej personal portfolio website'>
 
             <Box
                 sx={{
