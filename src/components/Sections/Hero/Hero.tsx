@@ -98,7 +98,7 @@ const Hero = () => {
                             })}>
                                 View Projects
                             </Button>
-                        <a href={`${process.env.RESUME || 'https://drive.google.com/file/d/1pOnYjffaTH3BhalqAeLuIeLK8p_2GgUA/view?usp=sharing'}`} rel="noreferrer" target='_blank' >
+                        <a href={`https://drive.google.com/file/d/16tAMClhjjcDQ2sxYY4HkHY-4XR1PkXLt/view?usp=sharing`} rel="noreferrer" target='_blank' >
 
                             <Button
                                 className='b2'
