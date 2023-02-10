@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import { IContactBox } from "../../Types/Types";
 
 
-const ContactBox = ({t1, t2, t3} : IContactBox) => {
+const ContactBox = ({t1, t2, t3,target,href} : IContactBox) => {
     return (
         <Box
             sx={{
@@ -27,7 +27,10 @@ const ContactBox = ({t1, t2, t3} : IContactBox) => {
                 },
                 fontWeight: '600'
             }}>
+                <a href={`${href}`} target={target || '_self'} >
+
                 {t1}
+                </a>
             </Typography>
             <Box
                 sx={{
@@ -47,6 +50,7 @@ const ContactBox = ({t1, t2, t3} : IContactBox) => {
                     fontSize: {
                         xs: '1em'
                     },
+                    cursor:'pointer',
                     textAlign: {
                         xs: 'center',
                         sm: 'revert'

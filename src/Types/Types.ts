@@ -11,9 +11,11 @@ export interface ICustomLink {
 export interface ILayout {
     title : string;
     children : any
-    desc ?: string
+    desc ?: string;
+    navbarSx ?: any;
 }
 export interface INavbar {
+    navbarSx?:any;
     toggleDrawer : (state?: boolean) => void
 }
 export interface IInput {
@@ -26,7 +28,9 @@ export interface IInput {
 export interface IContactBox {
     t1 : string;
     t2 : string;
-    t3 : string
+    t3 : string;
+    target ?: string;
+    href: string;
 }
 
 export interface ICustomDrawer extends INavbar {

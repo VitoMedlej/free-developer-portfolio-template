@@ -8,7 +8,7 @@ import Footer from "../src/components/Footer/Footer";
 
 
 
-const Layout = ({ title ,children ,desc } : ILayout) => {
+const Layout = ({navbarSx, title ,children ,desc } : ILayout) => {
   const [isOpen,setOpen] = useState(false)
     const toggleDrawer = (state?:boolean) => {
       setOpen(state !== undefined ? state : !isOpen)
@@ -17,25 +17,23 @@ const Layout = ({ title ,children ,desc } : ILayout) => {
   return (
 
     <>
-    <Head>
-        <title>{title || 'My page title'}</title>
+    <Head >
+        <title>{title || "Vito Medlej Personal Portfolio | Lebanese Web Developer"}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="shortcut icon" href="https://res.cloudinary.com/dwcu3wcol/image/upload/v1657099811/log_nkmcys.jpg" />
-        <link rel="preconnect" href="https://fonts.googleapis.com"/>
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-      <link href={`https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700&display=swap`} rel="stylesheet" />
+  
    
     
-<meta name="description" content={`${desc || 'Vito Medlej personal portfolio website, A Lebanese web developer an expert in UI/UX and building complex web applications.'}`} />
+<meta name="description" content={`${desc || 'Vito Medlej personal portfolio, An expert in UI/UX and building complex websites and applications'}`} />
 
 
-<meta property="og:title" content="Vito Medlej Personal Portfolio | Web Developer To Hire" />
+<meta property="og:title" content="Vito Medlej Personal Portfolio | Lebanese Web Developer" />
 
 
 <meta property="og:url" content="https://elvito.netlify.app" />
 
 
-<meta property="og:description" content="Vito Medlej is a Web Developer based in Lebanon. And this is my personal Portfolio. "/>
+<meta property="og:description" content="Vito Medlej | Web Developer based in Lebanon. And this is my Portfolio and my blog "/>
 
 
 <meta property="og:image" content="https://res.cloudinary.com/dwcu3wcol/image/upload/v1658929513/log-removebg-preview_fygpsd.png"/>
@@ -44,12 +42,36 @@ const Layout = ({ title ,children ,desc } : ILayout) => {
 <meta property="og:type" content="article" /> */}
    
    
+   <meta http-equiv="content-language" content="en"/>
+    <meta charSet="UTF-8"/>
+    <meta name="robots" content="index, follow"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    {/* <meta name="description" content="Site Meta Description" /> */}
+    <meta name="keywords" content="Personal Portfolio" />
+    <meta name="author" content="Vito Medlej" />
+    <meta name="publisher" content="publisher"/>
+    <meta name="copyright" content="copyright"/>
+    <meta name="page-topic" content="Web Development | Blog"/>
+    <meta name="page-type" content="Blogging"/>
+    <meta name="audience" content="Everyone"/>
+    {/* <!-- Facebook, whatsapp, instagram, twitter and other popular social media --> */}
+    {/* <meta property="og:title" content={title}/> */}
+    {/* <meta property="og:description" content="Site Content short description"/> */}
+    {/* <meta property="og:image" content="http://example.com/thumbnail.jpg"/> */}
+    {/* <meta property="og:url" content="http://example.com"/> */}
+    {/* <meta name="twitter:card" content="summary_large_image"/> */}
+
+    {/* <!-- Some Non-essential but recommended --> */}
+    {/* <meta property="og:site_name" content="Website Name"> <!-- Optional --> */}
+    {/* <meta name="twitter:image:alt" content="Alt text for image"> <!-- Optional --> */}
+
+    {/* <!-- If has need analytics for facebook and twitter --> */}
+    {/* <meta property="fb:app_id" content="your_app_id" /> */}
+    {/* <meta name="twitter:site" content="@website-username"/> */}
    
-   
-   
-   
-    </Head>
-    <Navbar toggleDrawer={toggleDrawer}/>
+  
+    </Head> 
+    <Navbar toggleDrawer={toggleDrawer} navbarSx={navbarSx}/>
     <CustomDrawer isOpen={isOpen} toggleDrawer={toggleDrawer}/>
     <Box 
      className="site-content">

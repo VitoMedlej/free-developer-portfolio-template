@@ -1,5 +1,4 @@
-import AppBar from '@mui/material/AppBar';
-import IconButton from '@mui/material/IconButton';
+import {AppBar,Typography,Button,IconButton} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import {useContext} from 'react';
@@ -10,6 +9,8 @@ import {ColorModeContext} from '../../../pages/_app';
 import Logo from '../Logo/Logo';
 import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
 import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
+import { useRouter } from 'next/router';
+
 export const Links = [
     {
         text: 'Home',
@@ -31,11 +32,12 @@ export const Links = [
     }
 ]
 
-const Navbar = ({toggleDrawer} : INavbar) => {
+const Navbar = ({toggleDrawer,navbarSx} : INavbar) => {
     const colorMode = useContext(ColorModeContext)
     const color = colorMode.mode === 'light'
         ? 'black'
-        : 'white'
+        : 'white';
+    const router= useRouter()
     return (
         <AppBar
             sx={{
@@ -44,7 +46,8 @@ const Navbar = ({toggleDrawer} : INavbar) => {
             py: '.45em',
             zIndex: '555',
             backdropFilter: 'blur(1px)',
-            position: 'fixed'
+            position: 'fixed',
+            ...navbarSx
         }}
             position="static">
             <Container
@@ -57,7 +60,13 @@ const Navbar = ({toggleDrawer} : INavbar) => {
                 maxWidth="lg">
 
                 <Logo color={color} toggleDrawer={toggleDrawer} colorMode={colorMode}/>
-
+                <Button 
+                onClick={()=>router.push('/blog')}
+                sx={{mr:'1em',fontWeight:'500',':hover':{color:'#0092ff'},color:color}}>
+                    {/* <Typography> */}
+                    Blog
+                    {/* </Typography> */}
+                </Button>
                 <IconButton
                     sx={{
                     color,

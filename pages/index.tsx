@@ -64,54 +64,54 @@ export async function getStaticProps() {
         const accessToken = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN;
 
         // then, send a request to Contentful (using the same URL from GraphiQL)
-        const res = await fetch(`https://graphql.contentful.com/content/v1/spaces/${space}`, {
-            method: 'POST', // GraphQL *always* uses POST requests!
-            headers: {
-                'content-type': 'application/json',
-                authorization: `Bearer ${accessToken}`, // add our access token header
-            },
-            // send the query we wrote in GraphiQL as a string
-            body: JSON.stringify({
-                // all requests start with "query: ", so we'll stringify that for convenience
-                query: `
-                {
-                  projectCollection {
-                    items {
-                      title
-                      repoUrl
-                      siteUrl
-                      description
-                      img
-                    }
-                  }
-                  iconsCollection {
-                    items {
-                      filter
-                      svg
-                      title
-                      isBackend
-                    }
-                  }
-                }
+        // const res =    await fetch(`https://graphql.contentful.com/content/v1/spaces/${space}`, {
+        //     method: 'POST', // GraphQL *always* uses POST requests!
+        //     headers: {
+        //         'content-type': 'application/json',
+        //         authorization: `Bearer ${accessToken}`, // add our access token header
+        //     },
+        //     // send the query we wrote in GraphiQL as a string
+        //     body: JSON.stringify({
+        //         // all requests start with "query: ", so we'll stringify that for convenience
+        //         query: `
+        //         {
+        //           projectCollection {
+        //             items {
+        //               title
+        //               repoUrl
+        //               siteUrl
+        //               description
+        //               img
+        //             }
+        //           }
+        //           iconsCollection {
+        //             items {
+        //               filter
+        //               svg
+        //               title
+        //               isBackend
+        //             }
+        //           }
+        //         }
                 
-                  `
-            })
-        },);
+        //           `
+        //     })
+        // },);
 
         // grab the data from our response
-        const {data} = await res.json()
-
-        if (!data || data.length < 1) {
+        // const {data} = await res.json()
+        const data :any = {}
+        if (!data || data?.length < 1) {
             throw 'Error fetching data'
         }
         let iconsArray = []
-        for (let i = 0; i < data.iconsCollection.items.length; i++) {
-            let clearedIcon = removeEmpty(data.iconsCollection.items[i])
+        for (let i = 0; i < data?.iconsCollection.items.length; i++) {
+            let clearedIcon = removeEmpty(data?.iconsCollection.items[i])
             iconsArray.push(clearedIcon)
         }
         return {
             props: {
-                projectsArray: data.projectCollection.items,
+                projectsArray: data?.projectCollection.items,
                 iconsArray
             }
         }

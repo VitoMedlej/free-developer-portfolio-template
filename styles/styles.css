@@ -1,9 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box !important;
-          box-sizing: border-box !important;
-  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box !important;
+  font-family: "Montserrat", sans-serif;
 }
 
 .img1 {
@@ -25,7 +24,6 @@ a {
   text-decoration: none;
   color: #0000EE;
 }
-
 a :visited {
   color: #551A8B;
 }
@@ -41,8 +39,7 @@ a :visited {
 }
 
 .filter {
-  -webkit-filter: invert(1);
-          filter: invert(1);
+  filter: invert(1);
 }
 
 .icon {
@@ -63,14 +60,12 @@ a :visited {
 }
 
 .t25o0 {
-  -webkit-transform: translateY(25px);
-          transform: translateY(25px);
+  transform: translateY(25px);
   opacity: 0;
 }
 
 .logoImg {
-  -webkit-filter: invert(100%) sepia(1%) saturate(1%) hue-rotate(0) brightness(1209%) contrast(300%);
-          filter: invert(100%) sepia(1%) saturate(1%) hue-rotate(0) brightness(1209%) contrast(300%);
+  filter: invert(100%) sepia(1%) saturate(1%) hue-rotate(0) brightness(1209%) contrast(300%);
   height: 42px;
 }
 
@@ -80,67 +75,54 @@ a :visited {
 
 .fill:hover,
 .fill:focus {
-  -webkit-box-shadow: inset 0 0 0 2em var(--hover);
-          box-shadow: inset 0 0 0 2em var(--hover);
+  box-shadow: inset 0 0 0 2em var(--hover);
 }
 
 .pulse:hover,
 .pulse:focus {
   -webkit-animation: pulse 1s;
           animation: pulse 1s;
-  -webkit-box-shadow: 0 0 0 2em transparent;
-          box-shadow: 0 0 0 2em transparent;
+  box-shadow: 0 0 0 2em transparent;
 }
 
 @-webkit-keyframes pulse {
   0% {
-    -webkit-box-shadow: 0 0 0 0 var(--hover);
-            box-shadow: 0 0 0 0 var(--hover);
+    box-shadow: 0 0 0 0 var(--hover);
   }
 }
 
 @keyframes pulse {
   0% {
-    -webkit-box-shadow: 0 0 0 0 var(--hover);
-            box-shadow: 0 0 0 0 var(--hover);
+    box-shadow: 0 0 0 0 var(--hover);
   }
 }
-
 .close:hover,
 .close:focus {
-  -webkit-box-shadow: inset -3.5em 0 0 0 var(--hover), inset 3.5em 0 0 0 var(--hover);
-          box-shadow: inset -3.5em 0 0 0 var(--hover), inset 3.5em 0 0 0 var(--hover);
+  box-shadow: inset -3.5em 0 0 0 var(--hover), inset 3.5em 0 0 0 var(--hover);
 }
 
 .raise:hover,
 .raise:focus {
-  -webkit-box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-          box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-  -webkit-transform: translateY(-0.25em);
-          transform: translateY(-0.25em);
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
 }
 
 .up:hover,
 .up:focus {
-  -webkit-box-shadow: inset 0 -3.25em 0 0 var(--hover);
-          box-shadow: inset 0 -3.25em 0 0 var(--hover);
+  box-shadow: inset 0 -3.25em 0 0 var(--hover);
 }
 
 .slide:hover,
 .slide:focus {
-  -webkit-box-shadow: inset 6.5em 0 0 0 var(--hover);
-          box-shadow: inset 6.5em 0 0 0 var(--hover);
+  box-shadow: inset 6.5em 0 0 0 var(--hover);
 }
 
 .offset {
-  padding: .75em 2.5em;
-  -webkit-box-shadow: 0.3em 0.3em 0 0 var(--color), inset 0.3em 0.3em 0 0 var(--color);
-          box-shadow: 0.3em 0.3em 0 0 var(--color), inset 0.3em 0.3em 0 0 var(--color);
+  padding: 0.75em 2.5em;
+  box-shadow: 0.3em 0.3em 0 0 var(--color), inset 0.3em 0.3em 0 0 var(--color);
 }
-
 .offset:hover, .offset:focus {
-  -webkit-box-shadow: 0 0 0 0 var(--hover), inset 6em 3.5em 0 0 var(--hover);
-          box-shadow: 0 0 0 0 var(--hover), inset 6em 3.5em 0 0 var(--hover);
+  box-shadow: 0 0 0 0 var(--hover), inset 6em 3.5em 0 0 var(--hover);
 }
 
 .offset {
@@ -150,10 +132,8 @@ a :visited {
 
 button {
   color: var(--color);
-  -webkit-transition: 0.25s;
   transition: 0.25s;
 }
-
 button:hover, button:focus {
   border-color: var(--hover);
   color: #fff;
@@ -165,5 +145,4 @@ button {
   font: inherit;
   line-height: 1;
   margin: 0.5em;
-}
-/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=styles.css.map */

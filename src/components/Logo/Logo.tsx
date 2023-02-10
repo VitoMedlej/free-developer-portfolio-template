@@ -19,7 +19,8 @@ const Logo = ({toggleDrawer, colorMode, color} : any) => {
                 });
             }}
             sx={{
-            cursor: 'pointer',
+                flex:1,
+                cursor: 'pointer',
             display: 'flex',
             alignItems: 'center'
         }}>

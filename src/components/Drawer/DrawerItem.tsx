@@ -14,13 +14,18 @@ const DrawerItem = ({text, Icon, url, toggleDrawer, isToggleTheme} : IDrawerItem
     return (
         <ListItem
             onClick={() => {
+            if (isToggleTheme) {
+                toggleDrawer(false);
+                isToggleTheme && colorMode.toggleColorMode()
+                return;
+            }
             toggleDrawer(false);
             router.push(`${url || '/'}`);
             isScrollTo  && gsap.to(window, {
                 duration: 2,
                 scrollTo: `#ProjectSection`
             });
-            isToggleTheme && colorMode.toggleColorMode()
+            // isToggleTheme && colorMode.toggleColorMode()
         }}
             disablePadding
             sx={{
