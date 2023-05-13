@@ -94,7 +94,7 @@ const About = () => {
                                 sm: '1em'
                             }
                         }}>
-                           A 19 years old lebanon-based web developer. About a year and few months ago, I decided I wanted to do something for future me, and after a bit of research I decided web development was the way to go. Ever since I&lsquo;ve been coding on a daily basis despite the constant ups and downs, I kept going.
+                      A 20-year-old Lebanon-based software developer. I first started developing games using Unity3D, but soon realized I preferred web and mobile app development, and I&apos;ve been building and working on that for the past 3 years now.
 
                         </Typography>
                     </Box>
@@ -108,11 +108,11 @@ const About = () => {
                             },
                             pb:'.5em'
                         }}>
+                      Being self-taught made me appreciate education; thus, I&apos;m studying Management Information Systems simultaneously. Business and technology are both my passions.
 
-                       I&lsquo;ve been working on my english and my soft skills and other important aspects in life such as having a wide networking circle so if that&lsquo;s something you&lsquo;re intrested in growing hit me up and let&lsquo;s double the opportunities. 
                         </Typography>
                     <ReadMore>
-                    Aside from the working hard, I tend to enjoy simple things like reading, petting cats, hitting the gym and other things we humans do. If any of what I said seems convincing enough then please don&lsquo;t hesitate to send me a message
+                    Aside from working hard, I tend to enjoy simple things like reading, petting cats, hitting the gym, and other things we humans do. If any of what I said seems interesting, then please do not hesitate to send me a message.
                     </ReadMore>
                 </Grid>
             </Grid>

@@ -57,7 +57,7 @@ const Hero = () => {
                             fontWeight: '600'
                         }}>
                       
-                        The place where your business exapnds
+                        The place where your business expands
                         </Typography>
                         <Typography
                             variant='h2'
@@ -72,7 +72,7 @@ const Hero = () => {
                             maxWidth: '570px',
                             fontWeight: '300'
                         }}>
-                           Hey there! Call me Vito Medlej. I enjoy creating kickass websites and web apps, ones that suit your desires and needs using latest technologies and cleanest design patterns. 
+                           Hey there! Call me Vito Medlej. I enjoy creating kickass websites and web/mobile apps, ones that suit your desires and needs using latest technologies and cleanest design patterns. 
                         </Typography>
 
                         <Box
@@ -178,8 +178,8 @@ const Hero = () => {
                                 zIndex: '2'
                             }}
                                 className='img1'
-                                src={`https://res.cloudinary.com/dwcu3wcol/image/upload/v1659775761/297320475_725718358722605_8872437478418476290_n_luki7p.jpg`}
-                                alt=""/>
+                                src={`https://ucarecdn.com/150b60a1-4ef3-4ec8-8f1a-d90a7ea26c85/-/crop/1129x1256/0,194/-/preview/3000x3000/`}
+                                alt="Personal Image"/>
                             <Box
                                 className='gradientBg'
                                 sx={{

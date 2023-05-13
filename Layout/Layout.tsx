@@ -42,7 +42,7 @@ const Layout = ({navbarSx, title ,children ,desc } : ILayout) => {
 <meta property="og:type" content="article" /> */}
    
    
-   <meta http-equiv="content-language" content="en"/>
+   <meta httpEquiv="content-language" content="en"/>
     <meta charSet="UTF-8"/>
     <meta name="robots" content="index, follow"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>

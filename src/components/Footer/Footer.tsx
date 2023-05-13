@@ -17,8 +17,8 @@ function Copyright() {
 
             <Typography variant='h1' fontSize='1em'>
                 {'Copyright © '}
-                <Link color="inherit" href="/">
-                    elvito-portfolio.netlify.app
+                <Link color="inherit" target='_blank'  rel="noreferrer" href="https://onbeirut.onrender.com">
+                    onbeirut.onrender.com
                 </Link>{' '} {new Date().getFullYear()}
                 {'.'}
             </Typography>
@@ -65,7 +65,9 @@ function Footer() {
 
                         <Box sx={styles}>
                             <Typography variant='h3' fontSize='1em'>
-                                Hi my name is Vito Medlej and I&lsquo;ve built this portfolio website to showcase my work and give clients and employers a way to reach me out and see my work. If you&lsquo;re a developer as well feel free to use this website as your own and good luck on your journey.
+                                Hi, my name is Vito Medlej and I have created the OnBeirut Agency which aims to solve various issues small lebanese
+                                businesses face. You are free to use the website as a template for yourself as long as you
+                                give credit.
                             </Typography>
                         </Box>
 
@@ -92,7 +94,7 @@ function Footer() {
                         <Box className='link' sx={styles}>
                             <a target='_blank' rel="noreferrer" href='https://github.com/VitoMedlej'>Github</a>
                             <Typography variant='h1' fontSize='1em'>vito.medlej@gmail.com</Typography>
-                            <Typography variant='h1' fontSize='1em'>Lebanon/beirut</Typography>
+                            <Typography variant='h1' fontSize='1em'>Lebanon/Beirut</Typography>
                             <Typography variant='h1' fontSize='1em'>+961/81826445</Typography>
                         </Box>
                     </Grid>
